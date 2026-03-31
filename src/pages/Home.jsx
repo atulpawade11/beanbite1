@@ -1,19 +1,19 @@
-import React, { useState } from 'react';
-import { Menu, X, Phone, Clock, MapPin, ChevronDown, CheckCircle2, ArrowRight, ArrowLeft, Quote, Calendar, Linkedin, Facebook, Twitter, Instagram, TrendingUp, Star } from 'lucide-react';
+import React from 'react';
 import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
+import { TrendingUp, Calendar, Quote, Star, ArrowLeft, ArrowRight, CheckCircle2 } from 'lucide-react';
 
+// Animation variants (kept here for page-specific use)
 const fadeInUp = {
   initial: { opacity: 0, y: 30 },
   animate: { opacity: 1, y: 0 },
   transition: { duration: 0.6, ease: "easeOut" }
 };
 
-const fadeIn = {
-  initial: { opacity: 0 },
-  animate: { opacity: 1 },
-  transition: { duration: 0.8 }
-};
+const fadeIn = {  
+    initial: { opacity: 0, y: 20 },
+    animate: { opacity: 1, y: 0 },
+    transition: { duration: 0.5 }
+  };
 
 const fadeInLeft = {
   initial: { opacity: 0, x: -50 },
@@ -29,97 +29,15 @@ const fadeInRight = {
 
 const staggerContainer = {
   initial: {},
-  animate: {
-    transition: {
-      staggerChildren: 0.2
-    }
-  }
+  animate: { transition: { staggerChildren: 0.2 } }
 };
 
 const Home = () => {
-    const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-    return (
-        <div className="font-sans text-gray-800 antialiased bg-white">
-            {/* Top Bar */}
-            <div className="bg-white border-b border-gray-100 py-3 hidden md:block">
-                 <div className="max-w-[1400px] mx-auto px-4 lg:px-12 flex justify-between items-center text-[13px] font-medium text-gray-600">
-                     <div className="flex space-x-8">
-                        <span className="flex items-center gap-2"><Phone size={14} className="text-gray-900 stroke-[2.5]" /> (888) 700 5543</span>
-                        <span className="flex items-center gap-2"><Clock size={14} className="text-gray-900 stroke-[2.5]" /> Mon – Fri 8 am – 6 pm</span>
-                     </div>
-                     <div className="flex">
-                        <span className="flex items-center gap-2"><MapPin size={14} className="text-gray-900 stroke-[2.5]" /> 1015 Riley St, #297 Folsom CA 95630</span>
-                     </div>
-                 </div>
-            </div>
-
-            {/* Navigation */}
-            <motion.nav 
-                initial={{ y: -100, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ duration: 0.8, ease: "easeOut" }}
-                className="sticky top-0 w-full z-50 bg-white shadow-sm md:shadow-none py-4"
-            >
-                <div className="max-w-[1400px] mx-auto px-4 lg:px-12">
-                    <div className="flex justify-between items-center h-16">
-                        {/* Logo */}
-                        <div className="flex-shrink-0 flex items-center">
-                            <img src="/homeOne/logo-light 1.svg" alt="BEANbite" className="h-12 w-auto" />
-                        </div>
-
-                        {/* Desktop Menu */}
-                         <div className="hidden lg:flex items-center justify-center flex-1 mx-8">
-                            <div className="flex items-center space-x-8">
-                                <a href="#" className="text-[15px] font-bold text-gray-900 border-b-2 border-bean-green-500 pb-0.5">Home</a>
-                                <Link to="/home-two" className="text-[15px] font-medium text-gray-600 hover:text-bean-green-600 transition-colors">About Us</Link>
-                                <div className="relative group">
-                                     <button className="flex items-center gap-1.5 text-[15px] font-medium text-gray-600 hover:text-bean-green-600 transition-colors focus:outline-none">
-                                        Services <ChevronDown size={14} strokeWidth={2.5} />
-                                    </button>
-                                </div>
-                                <a href="#success" className="text-[15px] font-medium text-gray-600 hover:text-bean-green-600 transition-colors">Client Success</a>
-                                <a href="#resources" className="text-[15px] font-medium text-gray-600 hover:text-bean-green-600 transition-colors">Resources</a>
-                                <a href="#blog" className="text-[15px] font-medium text-gray-600 hover:text-bean-green-600 transition-colors">Blog</a>
-                                <a href="#contact" className="text-[15px] font-medium text-gray-600 hover:text-bean-green-600 transition-colors">Contact Us</a>
-                            </div>
-                        </div>
-
-                        {/* Right Side CTA */}
-                        <div className="hidden lg:flex items-center">
-                            <a href="#consultation" className="text-[15px] font-bold text-gray-900 border-b-2 border-gray-900 hover:text-bean-green-600 hover:border-bean-green-600 pb-0.5 flex items-center gap-1 transition-all">
-                                Book a Consultation <span className="text-lg font-bold">›</span>
-                            </a>
-                        </div>
-
-                        {/* Mobile menu button */}
-                        <div className="lg:hidden">
-                            <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="text-gray-600 hover:text-bean-green-600 p-2">
-                                {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                
-                {/* Mobile Menu Dropdown */}
-                 {isMenuOpen && (
-                    <div className="lg:hidden bg-white border-b border-gray-100 px-4 pt-2 pb-6 shadow-lg">
-                        <div className="flex flex-col space-y-4 font-medium">
-                             <a href="#" className="text-bean-green-600">Home</a>
-                             <a href="#about" className="text-gray-600">About Us</a>
-                             <a href="#services" className="text-gray-600 flex justify-between">Services <ChevronDown size={16}/></a>
-                             <a href="#success" className="text-gray-600">Client Success</a>
-                             <a href="#resources" className="text-gray-600">Resources</a>
-                             <a href="#blog" className="text-gray-600">Blog</a>
-                             <a href="#contact" className="text-gray-600">Contact Us</a>
-                             <a href="#consultation" className="text-center py-3 border border-gray-900 text-gray-900 rounded-lg hover:bg-gray-50">Book a Consultation</a>
-                        </div>
-                    </div>
-                )}
-            </motion.nav>
-
-            {/* Hero Section */}
-            <section className="max-w-[1400px] mx-auto px-4 lg:px-12 mt-4 mb-20">
+  return (
+    <div className="font-sans text-gray-800 antialiased bg-white">
+      
+      {/* Hero Section */}
+      <section className="max-w-[1400px] mx-auto px-4 lg:px-12 mt-4 mb-20">
                 <motion.div 
                     initial={{ opacity: 0, scale: 0.95 }}
                     animate={{ opacity: 1, scale: 1 }}
@@ -176,6 +94,7 @@ const Home = () => {
                      </div>
                 </motion.div>
             </section>
+
             {/* About Us Section */}
             <section id="about" className="max-w-[1400px] mx-auto px-4 lg:px-12 mb-24">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
@@ -726,172 +645,8 @@ const Home = () => {
                  </div>
              </section>
 
-             {/* Footer Section */}
-             <div className="bg-[#414C00] pt-20 relative mt-20">
-                 {/* Floating Banner */}
-                 <div className="max-w-[1240px] mx-auto px-4 lg:px-12 relative z-20 ">
-                    <motion.div 
-                        initial={{ y: 50, opacity: 0 }}
-                        whileInView={{ y: 0, opacity: 1 }}
-                        transition={{ duration: 0.8 }}
-                        viewport={{ once: true }}
-                        className="bg-[#AFCB12] rounded-[40px] p-8 md:p-12 flex flex-col md:flex-row justify-between items-center relative overflow-hidden shadow-lg border-4 border-white/10"
-                    >
-                         {/* Background Grid Pattern (Subtle) */}
-                        <div className="absolute right-0 top-0 w-1/3 h-full opacity-10" style={{ backgroundImage: 'linear-gradient(to right, #000 1px, transparent 1px), linear-gradient(to bottom, #000 1px, transparent 1px)', backgroundSize: '20px 20px' }}></div>
-                        
-                        <div className="md:w-3/5 mb-8 md:mb-0 relative z-10">
-                            <h2 className="text-3xl md:text-4xl font-bold text-[#414C00] mb-4">Book An Appointment</h2>
-                            <p className="text-[#3f5216] leading-relaxed max-w-xl text-lg opacity-90">
-                                At vero eos et accusamus et iusto odio dignissimos ducimus quiy blanditiis praesentium voluptatum deleniti atque corrupti dolorese
-                            </p>
-                        </div>
-                        
-                        <div className="relative z-10 flex items-center  flex-col md:flex-row">
-                             {/* Decorative Curly Arrow - CSS Draw or SVG */}
-                             <motion.img 
-                                initial={{ x: -20, opacity: 0 }}
-                                whileInView={{ x: 0, opacity: 1 }}
-                                transition={{ delay: 0.4 }}
-                                viewport={{ once: true }}
-                                className='w-[150px] h-[130px] text-black mr-4' 
-                                src="/homeOne/footer-card-arrow-icon.png" 
-                                alt="" 
-                            />
-
-                             <motion.button 
-                                whileHover={{ scale: 1.05 }}
-                                whileTap={{ scale: 0.95 }}
-                                className="bg-white hover:bg-white/90 text-[#1a2e05] pl-6 pr-1 py-1.5 rounded-full font-bold text-lg inline-flex items-center gap-4 transition-all shadow-md group border cursor-pointer border-transparent hover:border-[#384d14]/10"
-                            >
-                                <span>Get Start Free</span>
-                                <div className="w-10 h-10 bg-[#384d14] rounded-full flex items-center justify-center text-white group-hover:bg-[#2d4a0a] transition-colors">
-                                   <TrendingUp size={18} strokeWidth={3} />
-                                </div>
-                             </motion.button>
-                        </div>
-                    </motion.div>
-                 </div>
-
-                 {/* Main Footer */}
-                 <footer className=" text-white pt-20 pb-0 relative z-10">
-                     <motion.div 
-                        variants={staggerContainer}
-                        initial="initial"
-                        whileInView="animate"
-                        viewport={{ once: true }}
-                        className="max-w-[1400px] mx-auto px-4 lg:px-12 pb-12"
-                    >
-                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
-                             
-                             {/* Column 1: Brand & Newsletter */}
-                             <motion.div variants={fadeInUp} className="lg:col-span-1 space-y-6">
-                                 <div className="flex items-center gap-2">
-                                    <img src="/homeOne/logo-light 1.svg" alt="BEANbite" className="h-10 w-auto " />
-                                 </div>
-                                 <p className="text-gray-300 leading-relaxed text-[15px]">
-                                     At vero eos et accusamus iusto odio dignissimos ducimus blanditiis
-                                 </p>
-                                 
-                                 <form className="relative max-w-full">
-                                     <input 
-                                        type="email" 
-                                        placeholder="Email Address" 
-                                        className="w-full bg-white text-gray-800 rounded-lg pl-4 pr-12 py-3 focus:outline-none text-sm font-medium"
-                                     />
-                                     <button className="absolute right-1 top-1 bottom-1 w-10 bg-[#C5D92D] rounded-md flex items-center justify-center text-[#1a2e05] hover:bg-[#b0c41a] transition-colors">
-                                         <ArrowRight size={18} strokeWidth={2.5}/>
-                                     </button>
-                                 </form>
-                                 </motion.div>
-
-                             {/* Column 2: Quick Link */}
-                             <motion.div variants={fadeInUp} className="lg:pl-4">
-                                 <h4 className="text-lg font-bold mb-6 text-white">Quick Link</h4>
-                                 <ul className="space-y-4">
-                                     {['Home', 'About Us', 'Career', 'Contact Us'].map((item) => (
-                                         <li key={item}>
-                                             <a href="#" className="text-gray-300 hover:text-[#C5D92D] transition-colors text-[15px]">{item}</a>
-                                         </li>
-                                     ))}
-                                 </ul>
-                             </motion.div>
-
-                             <motion.div variants={fadeInUp}>
-                                 <h4 className="text-lg font-bold mb-6 text-white">Help Link</h4>
-                                 <ul className="space-y-4">
-                                     {['Testimonials', 'Client Success', 'Resources', 'Privacy Policy'].map((item) => (
-                                         <li key={item}>
-                                             <a href="#" className="text-gray-300 hover:text-[#C5D92D] transition-colors text-[15px]">{item}</a>
-                                         </li>
-                                     ))}
-                                 </ul>
-                             </motion.div>
-
-                             <motion.div variants={fadeInUp}>
-                                 <h4 className="text-lg font-bold mb-6 text-white">Services</h4>
-                                 <ul className="space-y-4">
-                                     {['Credentialing', 'Dental Insurance Verification', 'Billing Services'].map((item) => (
-                                         <li key={item}>
-                                             <a href="#" className="text-gray-300 hover:text-[#C5D92D] transition-colors text-[15px]">{item}</a>
-                                         </li>
-                                     ))}
-                                 </ul>
-                             </motion.div>
-
-                             {/* Column 5: Contact Us */}
-                             <motion.div variants={fadeInUp}>
-                                 <h4 className="text-lg font-bold mb-6 text-white">Contact Us</h4>
-                                 <ul className="space-y-6">
-                                     <li className="flex gap-3">
-                                         <MapPin className="shrink-0 text-[#2d4a0a] mt-1" size={18} fill="white" />
-                                         <div>
-                                             <strong className="block text-white text-[15px] mb-1">Address</strong>
-                                             <span className="text-gray-300 text-[14px]">1015 Riley St,#297 Folsom CA 95630</span>
-                                         </div>
-                                     </li>
-                                     <li className="flex gap-3">
-                                         <Phone className="shrink-0 text-[#2d4a0a] mt-1" size={18} fill="white" />
-                                          <div>
-                                             <strong className="block text-white text-[15px] mb-1">Phone Number</strong>
-                                             <span className="text-gray-300 text-[14px]">(888) 700 5543</span>
-                                         </div>
-                                     </li>
-                                     <li className="flex gap-3">
-                                         <div className="w-[18px] h-[18px] bg-white rounded flex items-center justify-center shrink-0 mt-1">
-                                            <div className="w-3 h-2 bg-[#2d4a0a]"></div> {/* Mock envelope icon element if Icon not available or just use Mail */}
-                                         </div> 
-                                          <div>
-                                             <strong className="block text-white text-[15px] mb-1">Mail Us</strong>
-                                             <span className="text-gray-300 text-[14px]">info@BEANbite.com</span>
-                                         </div>
-                                     </li>
-                                 </ul>
-                             </motion.div>
-                         </div>
-                     </motion.div>
-
-                    {/* Copyright Bar */}
-                    <div className="bg-[#414C00] py-6 border-t border-white/5">
-                        <div className="max-w-[1400px] mx-auto px-4 lg:px-12 flex flex-col md:flex-row justify-between items-center text-white text-sm">
-                             <p>BEANbite &copy; Copyright 2025 - Design & Developed by Immersive Infotech Pvt. Ltd</p>
-                             <div className="flex gap-4 mt-4 md:mt-0">
-                                 <a href="#" className="w-8 h-8 rounded-full bg-[#C5D92D] flex items-center justify-center text-[#1a2e05] hover:bg-white transition-colors">
-                                     <Facebook size={14} fill="currentColor" />
-                                 </a>
-                                 <a href="#" className="w-8 h-8 rounded-full bg-[#C5D92D] flex items-center justify-center text-[#1a2e05] hover:bg-white transition-colors">
-                                     <Instagram size={14} />
-                                 </a>
-                                 <a href="#" className="w-8 h-8 rounded-full bg-[#C5D92D] flex items-center justify-center text-[#1a2e05] hover:bg-white transition-colors">
-                                     <Twitter size={14} fill="currentColor" />
-                                 </a>
-                             </div>
-                        </div>
-                    </div>
-                 </footer>
-             </div>
-        </div>
-    );
+    </div>
+  );
 };
 
 export default Home;
