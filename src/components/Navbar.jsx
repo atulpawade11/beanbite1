@@ -60,7 +60,7 @@ const Navbar = () => {
                 </div>
               </div>
               
-              <Link to="/ClientSuccess" className="text-[15px] font-medium text-gray-600 hover:text-[#AFCB12] transition-colors">
+              <Link to="/client-success" className="text-[15px] font-medium text-gray-600 hover:text-[#AFCB12] transition-colors">
                 Client & Resources
               </Link>
               

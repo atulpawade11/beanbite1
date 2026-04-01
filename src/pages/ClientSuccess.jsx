@@ -1,9 +1,9 @@
 import React, { useRef } from "react";
 import { motion } from "framer-motion";
-import { TrendingUp } from "lucide-react";
+
 
 import InnerPageHeader from "../components/InnerPageHeader";
-import PartnersSection from "../components/PartnerSection";
+import PartnerSection from "../components/PartnerSection";
 
 // ================= CLIENT IMAGES =================
 const column1 = [
@@ -155,7 +155,7 @@ const ClientSuccess = () => {
 
       {/* ================= REUSABLE PARTNER SECTION ================= */}
       <div className="max-w-[1400px] mx-auto px-4 lg:px-10 py-16">
-        <PartnersSection />
+        <PartnerSection />
       </div>
     </div>
   );
