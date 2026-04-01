@@ -1,17 +1,21 @@
 import React, { useState } from 'react';
 import { Menu, X, ChevronDown, ChevronRight } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isServicesOpen, setIsServicesOpen] = useState(false);
+  const location = useLocation();
 
   const serviceLinks = [
     { path: "/services/credentialing", label: "Credentialing" },
     { path: "/services/verification", label: "Dental Insurance Verification" },
     { path: "/services/billing", label: "Billing Services" }
   ];
+
+  // Helper to check if a link is active
+  const isActive = (path) => location.pathname === path;
 
   return (
     <motion.nav 
@@ -32,20 +36,27 @@ const Navbar = () => {
           {/* Desktop Menu */}
           <div className="hidden lg:flex items-center justify-center flex-1 mx-8">
             <div className="flex items-center space-x-8">
-              <Link to="/" className="text-[15px] font-bold text-gray-900 border-b-2 border-[#C5D92D] pb-0.5">
+              <Link to="/" className={`text-[15px] font-bold transition-colors ${isActive('/') ? 'text-gray-900 border-b-2 border-[#C5D92D] pb-0.5' : 'text-gray-600 hover:text-[#AFCB12]'}`}>
                 Home
               </Link>
               
-              <Link to="/about" className="text-[15px] font-medium text-gray-600 hover:text-[#AFCB12] transition-colors">
+              <Link to="/about" className={`text-[15px] font-medium transition-colors ${isActive('/about') ? 'text-[#AFCB12]' : 'text-gray-600 hover:text-[#AFCB12]'}`}>
                 About Us
               </Link>
               
-              {/* Desktop Services Dropdown */}
-              <div className="relative group">
-                <button className="flex items-center gap-1.5 text-[15px] font-medium text-gray-600 hover:text-[#AFCB12] transition-colors focus:outline-none">
+              {/* Desktop Services Dropdown - Clickable & Hoverable */}
+              <div className="relative group py-4">
+                <Link 
+                  to="/services" 
+                  className={`flex items-center gap-1.5 text-[15px] font-medium transition-colors ${location.pathname.startsWith('/services') ? 'text-[#AFCB12]' : 'text-gray-600 hover:text-[#AFCB12]'}`}
+                >
                   Services <ChevronDown size={14} strokeWidth={2.5} />
-                </button>
-                <div className="absolute left-0 mt-2 w-64 bg-white rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+                </Link>
+                
+                {/* Invisible bridge to prevent menu from closing when moving mouse down */}
+                <div className="absolute top-full left-0 w-full h-2"></div>
+
+                <div className="absolute left-0 mt-0 w-64 bg-white rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 border border-gray-100">
                   <div className="py-2">
                     {serviceLinks.map((service, index) => (
                       <Link
@@ -60,19 +71,15 @@ const Navbar = () => {
                 </div>
               </div>
               
-              <Link to="/client-success" className="text-[15px] font-medium text-gray-600 hover:text-[#AFCB12] transition-colors">
+              <Link to="/client-success" className={`text-[15px] font-medium transition-colors ${isActive('/client-success') ? 'text-[#AFCB12]' : 'text-gray-600 hover:text-[#AFCB12]'}`}>
                 Client & Resources
               </Link>
               
-              {/*<Link to="/resources" className="text-[15px] font-medium text-gray-600 hover:text-[#AFCB12] transition-colors">
-                Resources
-                    </Link>*/}
-              
-              <Link to="/blog" className="text-[15px] font-medium text-gray-600 hover:text-[#AFCB12] transition-colors">
+              <Link to="/blog" className={`text-[15px] font-medium transition-colors ${isActive('/blog') ? 'text-[#AFCB12]' : 'text-gray-600 hover:text-[#AFCB12]'}`}>
                 Blog
               </Link>
               
-              <Link to="/contact" className="text-[15px] font-medium text-gray-600 hover:text-[#AFCB12] transition-colors">
+              <Link to="/contact" className={`text-[15px] font-medium transition-colors ${isActive('/contact') ? 'text-[#AFCB12]' : 'text-gray-600 hover:text-[#AFCB12]'}`}>
                 Contact Us
               </Link>
             </div>
@@ -80,14 +87,14 @@ const Navbar = () => {
 
           {/* Right Side CTA */}
           <div className="hidden lg:flex items-center">
-            <Link to="/consultation" className="text-[15px] font-bold text-gray-900 border-b-2 border-gray-900 hover:text-[#AFCB12] hover:border-[#AFCB12] pb-0.5 flex items-center gap-1 transition-all">
+            <Link to="/contact" className="text-[15px] font-bold text-gray-900 border-b-2 border-gray-900 hover:text-[#AFCB12] hover:border-[#AFCB12] pb-0.5 flex items-center gap-1 transition-all">
               Book a Consultation <span className="text-lg font-bold">›</span>
             </Link>
           </div>
 
           {/* Mobile menu button */}
           <div className="lg:hidden">
-            <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="text-gray-600 hover:text-[#AFCB12] p-2">
+            <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="text-gray-600 hover:text-[#AFCB12] p-2 transition-colors">
               {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
           </div>
@@ -106,34 +113,37 @@ const Navbar = () => {
           >
             <div className="px-4 pt-2 pb-6">
               <div className="flex flex-col space-y-4 font-medium">
-                <Link 
-                  to="/" 
-                  onClick={() => setIsMenuOpen(false)}
-                  className="text-[#AFCB12] py-2"
-                >
+                <Link to="/" onClick={() => setIsMenuOpen(false)} className={`${isActive('/') ? 'text-[#AFCB12]' : 'text-gray-600'} py-2`}>
                   Home
                 </Link>
                 
-                <Link 
-                  to="/about" 
-                  onClick={() => setIsMenuOpen(false)}
-                  className="text-gray-600 hover:text-[#AFCB12] transition-colors py-2"
-                >
+                <Link to="/about" onClick={() => setIsMenuOpen(false)} className={`${isActive('/about') ? 'text-[#AFCB12]' : 'text-gray-600'} py-2`}>
                   About Us
                 </Link>
                 
-                {/* Mobile Services Dropdown */}
+                {/* Mobile Services - Click text to go to page, Click arrow to toggle sub-menu */}
                 <div className="border-t border-gray-100 pt-2">
-                  <button
-                    onClick={() => setIsServicesOpen(!isServicesOpen)}
-                    className="flex items-center justify-between w-full text-gray-600 hover:text-[#AFCB12] transition-colors py-2"
-                  >
-                    <span>Services</span>
-                    <ChevronRight 
-                      size={18} 
-                      className={`transform transition-transform duration-200 ${isServicesOpen ? 'rotate-90' : ''}`}
-                    />
-                  </button>
+                  <div className="flex items-center justify-between w-full py-2">
+                    <Link 
+                      to="/services" 
+                      onClick={() => setIsMenuOpen(false)} 
+                      className={`${location.pathname === '/services' ? 'text-[#AFCB12]' : 'text-gray-600'} flex-1`}
+                    >
+                      Services
+                    </Link>
+                    <button
+                      onClick={(e) => {
+                        e.preventDefault();
+                        setIsServicesOpen(!isServicesOpen);
+                      }}
+                      className="p-2 text-gray-400"
+                    >
+                      <ChevronRight 
+                        size={18} 
+                        className={`transform transition-transform duration-200 ${isServicesOpen ? 'rotate-90' : ''}`}
+                      />
+                    </button>
+                  </div>
                   
                   <AnimatePresence>
                     {isServicesOpen && (
@@ -142,7 +152,7 @@ const Navbar = () => {
                         animate={{ opacity: 1, height: "auto" }}
                         exit={{ opacity: 0, height: 0 }}
                         transition={{ duration: 0.2 }}
-                        className="ml-4 mt-2 space-y-2 overflow-hidden"
+                        className="ml-4 mt-1 space-y-2 overflow-hidden border-l-2 border-gray-100"
                       >
                         {serviceLinks.map((service, index) => (
                           <Link
@@ -152,7 +162,7 @@ const Navbar = () => {
                               setIsMenuOpen(false);
                               setIsServicesOpen(false);
                             }}
-                            className="block text-sm text-gray-500 hover:text-[#AFCB12] transition-colors py-1.5 pl-2 border-l-2 border-gray-200 hover:border-[#AFCB12]"
+                            className="block text-sm text-gray-500 hover:text-[#AFCB12] transition-colors py-2 pl-4"
                           >
                             {service.label}
                           </Link>
@@ -162,44 +172,23 @@ const Navbar = () => {
                   </AnimatePresence>
                 </div>
                 
-                <Link 
-                  to="/client-success" 
-                  onClick={() => setIsMenuOpen(false)}
-                  className="text-gray-600 hover:text-[#AFCB12] transition-colors py-2"
-                >
+                <Link to="/client-success" onClick={() => setIsMenuOpen(false)} className={`${isActive('/client-success') ? 'text-[#AFCB12]' : 'text-gray-600'} py-2`}>
                   Client Success
                 </Link>
                 
-                <Link 
-                  to="/resources" 
-                  onClick={() => setIsMenuOpen(false)}
-                  className="text-gray-600 hover:text-[#AFCB12] transition-colors py-2"
-                >
-                  Resources
-                </Link>
-                
-                <Link 
-                  to="/blog" 
-                  onClick={() => setIsMenuOpen(false)}
-                  className="text-gray-600 hover:text-[#AFCB12] transition-colors py-2"
-                >
+                <Link to="/blog" onClick={() => setIsMenuOpen(false)} className={`${isActive('/blog') ? 'text-[#AFCB12]' : 'text-gray-600'} py-2`}>
                   Blog
                 </Link>
                 
-                <Link 
-                  to="/contact" 
-                  onClick={() => setIsMenuOpen(false)}
-                  className="text-gray-600 hover:text-[#AFCB12] transition-colors py-2"
-                >
+                <Link to="/contact" onClick={() => setIsMenuOpen(false)} className={`${isActive('/contact') ? 'text-[#AFCB12]' : 'text-gray-600'} py-2`}>
                   Contact Us
                 </Link>
                 
-                {/* Mobile Consultation Button */}
                 <div className="pt-4 border-t border-gray-100">
                   <Link
-                    to="/consultation"
+                    to="/contact"
                     onClick={() => setIsMenuOpen(false)}
-                    className="block text-center py-3 border-2 border-gray-900 text-gray-900 rounded-lg hover:bg-gray-50 hover:border-[#AFCB12] hover:text-[#AFCB12] transition-all font-medium"
+                    className="block text-center py-3 border-2 border-gray-900 text-gray-900 rounded-lg hover:border-[#AFCB12] hover:text-[#AFCB12] transition-all font-bold"
                   >
                     Book a Consultation
                   </Link>

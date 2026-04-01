@@ -5,8 +5,9 @@ import HomeTwo from './pages/HomeTwo';
 import About from './pages/About';
 import Career from './pages/Career';
 import ClientSuccess from "./pages/ClientSuccess";
+import Services from "./pages/Services"; 
 import Blog from './pages/Blog';
-import BlogDetails from "./pages/BlogDetails";
+import BlogDetails from './pages/BlogDetails';
 import Contact from './pages/Contact';
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/home-two" element={<HomeTwo />} />
           <Route path="/about" element={<About />} />
+          <Route path="/services" element={<Services />} /> 
           <Route path="/career" element={<Career />} />
           <Route path="/client-success" element={<ClientSuccess />} />
           <Route path="/blog" element={<Blog />} />
