@@ -3,7 +3,6 @@ import { motion } from "framer-motion";
 import { TrendingUp } from "lucide-react";
 
 import InnerPageHeader from "../components/InnerPageHeader";
-// Import the common partner section
 import PartnersSection from "../components/PartnerSection";
 
 // ================= CLIENT IMAGES =================
