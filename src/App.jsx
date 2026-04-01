@@ -10,8 +10,6 @@ import BlogDetails from "./pages/BlogDetails";
 import Contact from './pages/Contact';
 
 function App() {
-  console.log('App rendering');
-  
   return (
     <Router>
       <Routes>
@@ -19,8 +17,8 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/home-two" element={<HomeTwo />} />
           <Route path="/about" element={<About />} />
-          <Route path="/Career" element={<Career />} />
-          <Route path="/ClientSuccess" element={<ClientSuccess />} />
+          <Route path="/career" element={<Career />} />
+          <Route path="/client-success" element={<ClientSuccess />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog/:id" element={<BlogDetails />} />
           <Route path="/contact" element={<Contact />} />

@@ -6,7 +6,7 @@ import { Navigation, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import InnerPageHeader from '../components/InnerPageHeader';
-import PartnersSection from "../components/PartnerSection";
+import PartnerSection from "../components/PartnerSection";
 
 // Animation variants
 const fadeInUp = {
@@ -213,7 +213,7 @@ const Career = () => {
           </div>
 
           {/* Partners Section */}
-          <PartnersSection />
+          <PartnerSection />
         </div>
       </motion.div>
 
