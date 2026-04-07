@@ -99,7 +99,7 @@ const ClientSuccess = () => {
       </div>
 
       {/* ================= RESOURCES SECTION (FULL WIDTH) ================= */}
-      <div className="w-full py-16 bg-white">
+      <div className="w-full bg-white">
         <div className="grid md:grid-cols-2">
 
           {/* LEFT */}

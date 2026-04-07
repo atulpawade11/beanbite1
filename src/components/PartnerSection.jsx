@@ -97,7 +97,7 @@ const LogoCard = ({ partner, delay }) => (
     whileInView={{ opacity: 1, scale: 1 }}
     transition={{ duration: 0.5, delay }}
     whileHover={{ scale: 1.05 }}
-    className="bg-white border border-gray-200 rounded-xl h-20 flex items-center justify-center p-3 shadow-sm hover:shadow-md transition-shadow cursor-pointer"
+    className="bg-white h-20 flex items-center justify-center transition-shadow cursor-pointer"
   >
     <img src={partner.image} alt={partner.name} className="max-w-full max-h-full object-contain" />
   </motion.div>

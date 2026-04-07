@@ -17,7 +17,7 @@ const BillingSlider = () => {
   ];
 
   return (
-    <div className="w-full py-16 overflow-hidden">
+    <div className="w-full overflow-hidden">
 
       {/* CENTERED container */}
       <div className="max-w-[1320px] mx-auto px-4">

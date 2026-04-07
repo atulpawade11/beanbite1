@@ -583,7 +583,7 @@ const Home = () => {
              </section>
 
              {/* Blog Section */}
-             <section id="blog" className="pt-24 bg-white relative z-10 overflow-hidden">
+             <section id="blog" className="pt-24 bg-white relative z-10 overflow-hidden mb-20">
                  <div className="max-w-[1400px] mx-auto px-4 lg:px-12">
                      <motion.div 
                         variants={fadeInUp}

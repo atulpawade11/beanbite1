@@ -3,7 +3,7 @@ import InnerPageHeader from '../components/InnerPageHeader';
 
 const PrivacyPolicy = () => {
   return (
-    <div className="bg-white pb-24">
+    <div className="bg-white pb-20">
       <InnerPageHeader title="Privacy Policy" breadcrumb="Privacy Policy" />
       
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12 pt-16">

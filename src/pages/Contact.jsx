@@ -73,7 +73,7 @@ const Contact = () => {
       <InnerPageHeader title="Contact Us" breadcrumb="Contact Us" />
 
       {/* Main Content */}
-      <div className="max-w-[1400px] mx-auto px-4 lg:px-12 py-16 md:py-20">
+      <div className="max-w-[1400px] mx-auto px-4 lg:px-12 py-16 md:py-16">
         {/* Contact Info and Form Section */}
         <div className="grid lg:grid-cols-2 gap-16">
           {/* Left Side - Contact Info */}

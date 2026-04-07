@@ -5,6 +5,7 @@ import HomeTwo from './pages/HomeTwo';
 import About from './pages/About';
 import Career from './pages/Career';
 import ClientSuccess from "./pages/ClientSuccess";
+import Testimonials from "./pages/Testimonials";
 import Services from "./pages/Services"; 
 import Credentialing from './pages/Credentialing';
 import InsuranceVerification from './pages/InsuranceVerification';
@@ -29,6 +30,7 @@ function App() {
           <Route path="/services/billing" element={<BillingServices />} />
           <Route path="/career" element={<Career />} />
           <Route path="/client-success" element={<ClientSuccess />} />
+          <Route path="/testimonials" element={<Testimonials />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog/:id" element={<BlogDetails />} />
           <Route path="/contact" element={<Contact />} />

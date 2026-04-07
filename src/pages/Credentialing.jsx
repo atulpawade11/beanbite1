@@ -60,7 +60,7 @@ const Credentialing = () => {
             <InnerPageHeader title="Insurance Credentialing Service" breadcrumb="Services / Credentialing" />
 
             {/* 1. Top Section: We Cater to Start-up... */}
-            <section className="max-w-[1400px] mx-auto px-6 lg:px-12 py-20">
+            <section className="max-w-[1400px] mx-auto px-6 lg:px-16 py-20">
                 <div className="grid lg:grid-cols-2 gap-12 items-center">
                     <motion.div variants={fadeInUp} initial="hidden" whileInView="show">
                         <h2 className="text-2xl font-bold mb-4 text-gray-900 leading-tight">
@@ -79,60 +79,53 @@ const Credentialing = () => {
 
             {/* 2. Middle Section: PPO Fee Negotiations - PURE FULL BLEED IMAGE ON RIGHT */}
             {/* ========================================================= */}
-            <section className="bg-[#EEF4FF] overflow-hidden relative min-h-[500px] lg:min-h-[600px] flex items-center mb-16">
-  
-                {/* The container only holds the text now */}
-                <div className="max-w-[1400px] mx-auto px-6 lg:px-12 w-full">
-                    <div className="grid lg:grid-cols-2">
-                        {/* ================== LEFT SIDE: Text content ================== */}
+            <section className="bg-[#EEF4FF] overflow-hidden relative">
+                <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
+                    <div className="flex flex-col lg:grid lg:grid-cols-2 lg:min-h-[600px]">
+                        
+                        {/* LEFT SIDE: Text content */}
                         <motion.div 
                             variants={fadeInUp}
                             initial="hidden"
                             whileInView="show"
                             viewport={{ once: true, margin: "-100px" }}
-                            className="py-16 lg:py-24 pr-12 lg:pr-20 lg:col-span-1" // Added padding-right to separate from image edge
+                            className="py-16 lg:py-24 pr-0 lg:pr-20 z-10"
                         >
                             <h2 className="text-3xl font-bold mb-6 text-gray-900 leading-tight">
-                            PPO Fee Negotiations
+                                PPO Fee Negotiations
                             </h2>
                             <p className="text-gray-600 text-sm md:text-base leading-relaxed">
-                            This intricate process typically spans 8 to 10 months, involving careful 
-                            discussions with insurance providers to secure favorable fee schedules. 
-                            PPO fee negotiations are a pivotal aspect of optimizing financial outcomes 
-                            for dental practices. It is similar to any other major business negotiations. 
-                            There are generally recognized "do's" & "don'ts" to achieve the best negotiation 
-                            solution. Given the nuanced nature of these negotiations, patience is key, 
-                            as insurance companies may not swiftly adjust reimbursement rates. Successful 
-                            negotiations demand a strategic approach, evaluating each offer for its financial 
-                            impact and considering the long-term feasibility of maintaining a relationship 
-                            with the PPO plan.
+                                This intricate process typically spans 8 to 10 months, involving careful 
+                                discussions with insurance providers to secure favorable fee schedules. 
+                                PPO fee negotiations are a pivotal aspect of optimizing financial outcomes 
+                                for dental practices. It is similar to any other major business negotiations. 
+                                There are generally recognized "do's" & "don'ts" to achieve the best negotiation 
+                                solution. Given the nuanced nature of these negotiations, patience is key, 
+                                as insurance companies may not swiftly adjust reimbursement rates. Successful 
+                                negotiations demand a strategic approach, evaluating each offer for its financial 
+                                impact and considering the long-term feasibility of maintaining a relationship 
+                                with the PPO plan.
                             </p>
                         </motion.div>
+
+                        {/* RIGHT SIDE: Image Space */}
+                        {/* This empty div acts as a spacer for the grid on desktop */}
+                        <div className="hidden lg:block lg:col-span-1" />
                     </div>
                 </div>
 
-                {/* ================== RIGHT SIDE: THE PURE FULL BLEED IMAGE ================== */}
-                {/* This div sits completely outside the container but inside the relative section */}
-                <div className="absolute top-0 right-0 h-full w-full lg:w-1/2 overflow-hidden hidden lg:block">
+                {/* ================== FULL BLEED IMAGE ================== */}
+                <div className="relative lg:absolute lg:top-0 lg:right-0 w-full lg:w-1/2 h-[300px] sm:h-[400px] lg:h-full px-6 lg:px-0">
                     <img 
-                    src="/services/credentialing2.png"
-                    alt="PPO Negotiations" 
-                    className="absolute inset-0 w-full h-full object-cover"
-                    />
-                </div>
-
-                {/* Mobile Image: Standard layout within the grid, disappears on desktop */}
-                <div className="max-w-[1400px] mx-auto px-6 lg:hidden mb-16">
-                    <img 
-                    src="/services/credentialing2.png" 
-                    alt="Negotiations" 
-                    className="rounded-2xl shadow-xl w-full"
+                        src="/services/credentialing2.png"
+                        alt="PPO Negotiations" 
+                        className="w-full h-full object-cover rounded-2xl shadow-xl w-full"
                     />
                 </div>
             </section>
 
             {/* 3. Documents Required Section */}
-            <section className="max-w-[1400px] mx-auto px-6 lg:px-12 py-24">
+            <section className="max-w-[1400px] mx-auto px-6 lg:px-16 py-20">
                 <div className="grid lg:grid-cols-5 gap-12 items-center">
                     <div className="lg:col-span-2">
                         <img src="/services/credentialing3.png" alt="Documents" className="w-full aspect-square object-cover" />
@@ -152,7 +145,7 @@ const Credentialing = () => {
             </section>
 
             {/* 4. Workflow Accordion Section */}
-            <section className="bg-white py-20">
+            <section className="bg-white mb-20">
                 <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
                     <h2 className="text-3xl font-bold text-center mb-12">
                         BEANbite Credentialing and Fee <br/> Negotiations Workflow

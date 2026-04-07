@@ -15,7 +15,7 @@ const BillingServices = () => {
       <InnerPageHeader title="Billing Services" breadcrumb="Services / Billing" />
 
       {/* 1. Claims Submitted Daily Section */}
-      <section className="max-w-[1400px] mx-auto px-6 lg:px-12 py-20">
+      <section className="max-w-[1400px] mx-auto px-6 lg:px-12 py-16">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <motion.div variants={fadeInUp} initial="hidden" whileInView="show">
             <h2 className="text-3xl font-bold mb-6 text-gray-900">Claims Submitted Daily</h2>
@@ -37,7 +37,7 @@ const BillingServices = () => {
       </section>
 
       {/* 2. Highlighted Slider Section */}
-      <section className="py-20 bg-[#f8f9fb] overflow-hidden">
+      <section className="py-16 bg-[#f8f9fb] overflow-hidden">
         <div className="max-w-[1400px] mx-auto px-6">
           {/* JUST USE THE COMPONENT HERE */}
           <BillingSlider />
@@ -45,7 +45,7 @@ const BillingServices = () => {
       </section>
 
       {/* 3. Software Setup Section (Circular Image Left) */}
-      <section className="max-w-[1400px] mx-auto px-6 lg:px-12 py-20">
+      <section className="max-w-[1400px] mx-auto px-6 lg:px-12 pt-20 pb-0">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <div className="relative">
              <div className="absolute inset-0 bg-[#C5D92D] rounded-full translate-x-4 translate-y-4 -z-10" />
@@ -64,7 +64,7 @@ const BillingServices = () => {
       </section>
 
       {/* 4. Production Reports Section (Circular Image Right) */}
-      <section className="max-w-[1400px] mx-auto px-6 lg:px-12 py-20">
+      <section className="max-w-[1400px] mx-auto px-6 lg:px-12 pt-20 pb-0">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <motion.div variants={fadeInUp} initial="hidden" whileInView="show">
             <h2 className="text-3xl font-bold mb-6">Daily Billing & Production Reports</h2>
@@ -81,7 +81,7 @@ const BillingServices = () => {
         </div>
       </section>
 
-      <div className="max-w-[1400px] mx-auto px-6 lg:px-12 py-20">
+      <div className="max-w-[1400px] mx-auto px-6 lg:px-12 py-16">
         <PartnerSection />
       </div>
     </div>

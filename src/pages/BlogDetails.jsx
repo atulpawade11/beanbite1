@@ -17,7 +17,7 @@ const BlogDetails = () => {
         <div className="bg-[#f7f7f7] min-h-screen">
             <InnerPageHeader title="News & Insights Details" breadcrumb="Blog Details" />
 
-             <div className="max-w-[1400px] mx-auto px-4 lg:px-10 py-12">
+             <div className="max-w-[1400px] mx-auto px-4 lg:px-10 py-16">
 
                 {/* 🔥 TOP SECTION (FULL WIDTH) */}
                 <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-6 mb-10">

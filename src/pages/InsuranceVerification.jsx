@@ -30,7 +30,7 @@ const InsuranceVerification = () => {
       <InnerPageHeader title="Dental Insurance Verification" breadcrumb="Services / Verification" />
 
       {/* 1. Specialized Forms Section */}
-      <section className="max-w-[1400px] mx-auto px-6 lg:px-12 py-20">
+      <section className="max-w-[1400px] mx-auto px-6 lg:px-12 py-16">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <motion.div variants={fadeInUp} initial="hidden" whileInView="show">
             <h2 className="text-3xl font-bold mb-6 text-gray-900">For Specialists we provide customized forms</h2>
@@ -54,7 +54,7 @@ const InsuranceVerification = () => {
       </section>
 
         {/* 2. Short Form Section (Image Left, Text Right with Full-Width Background) */}
-        <section className="relative overflow-hidden py-24">
+        <section className="relative overflow-hidden py-16">
         {/* ================= BACKGROUND LAYER ================= */}
         <div 
             className="absolute inset-0 z-0"
@@ -136,7 +136,7 @@ const InsuranceVerification = () => {
       </section>
 
       {/* 4. Three Column Feature Section */}
-      <section className="bg-gray-50/50 py-24">
+      <section className="bg-gray-50/50 py-16">
         <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
           <div className="text-left mb-16">
             <span className="bg-[#C5D92D] text-[#1a2e05] px-4 py-1.5 rounded-full text-xs font-bold uppercase">Services</span>
@@ -163,7 +163,7 @@ const InsuranceVerification = () => {
         </div>
       </section>
 
-      <div className="max-w-[1400px] mx-auto px-6 lg:px-12 py-20">
+      <div className="max-w-[1400px] mx-auto px-6 lg:px-12 py-16">
         <PartnerSection />
       </div>
     </div>

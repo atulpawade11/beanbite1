@@ -3,7 +3,7 @@ import InnerPageHeader from '../components/InnerPageHeader';
 
 const TermsConditions = () => {
   return (
-    <div className="bg-white pb-24">
+    <div className="bg-white pb-20">
       <InnerPageHeader title="Terms & Conditions" breadcrumb="Terms" />
       
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12 pt-16 text-gray-700">
