@@ -53,19 +53,19 @@ const Footer = () => {
           <div>
             <h4 className="text-lg font-bold mb-6">Help Link</h4>
             <ul className="space-y-4 text-gray-300 text-[15px]">
-              <li><a href="/testimonials">Testimonial</a></li>
-              <li><a href="/client-success">Client & Resources</a></li>
-              <li><a href="/privacy-policy">Privacy Policy</a></li>
-              <li><a href="/terms-conditions">Terms & Conditions</a></li>
+              <li><Link to="/testimonials">Testimonial</Link></li>
+              <li><Link to="/client-success">Client & Resources</Link></li>
+              <li><Link to="/privacy-policy">Privacy Policy</Link></li>
+              <li><Link to="/terms-conditions">Terms & Conditions</Link></li>
             </ul>
           </div>
 
           <div>
             <h4 className="text-lg font-bold mb-6">Services</h4>
             <ul className="space-y-4 text-gray-300 text-[15px]">
-              <li><a href="/services/credentialing">Credentialing</a></li>
-              <li><a href="/services/verification">Verification</a></li>
-              <li><a href="/services/billing">Billing Services</a></li>
+              <li><Link to="/services/credentialing">Credentialing</Link></li>
+              <li><Link to="/services/verification">Verification</Link></li>
+              <li><Link to="/services/billing">Billing Services</Link></li>
             </ul>
           </div>
 

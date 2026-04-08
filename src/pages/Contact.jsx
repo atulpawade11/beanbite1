@@ -202,15 +202,15 @@ const Contact = () => {
               <div className="grid md:grid-cols-2 gap-4">
                 <input
                   type="text"
-                  name="firstName"
-                  placeholder="First name"
+                  name="fullName"
+                  placeholder="Your Name"
                   onChange={handleInputChange}
                   className="input-style"
                 />
                 <input
-                  type="text"
-                  name="lastName"
-                  placeholder="Last name"
+                  type="email"
+                  name="email"
+                  placeholder="Your Email"
                   onChange={handleInputChange}
                   className="input-style"
                 />
@@ -238,17 +238,28 @@ const Contact = () => {
               <div className="grid md:grid-cols-2 gap-4">
                 <select name="practiceSize" className="input-style">
                   <option>Dental practice size</option>
+                  <option>Single</option>
+                  <option>2 - 5 Practices</option>
+                  <option>6 - 10 Practices</option>
+                  <option>More than 10 practices</option>
                 </select>
 
                 <select name="howDidYouHear" className="input-style">
                   <option>How did you here about us?</option>
+                  <option>Google</option>
+                  <option>Linkedin</option>
+                  <option>Facebook</option>
+                  <option>Dental Conference</option>
                 </select>
               </div>
 
               {/* Service */}
-              <select name="service" className="input-style">
-                <option>What service you are looking for?</option>
-              </select>
+              <textarea 
+                name="service" 
+                className="input-style" 
+                placeholder="What service are you looking for?"
+                rows={2}
+              />
 
               {/* Opt-in */}
               <div className="pt-4">

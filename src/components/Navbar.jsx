@@ -86,8 +86,11 @@ const Navbar = () => {
           </div>
 
           {/* Right Side CTA */}
-          <div className="hidden lg:flex items-center">
-            <Link to="/contact" className="text-[15px] font-bold text-gray-900 border-b-2 border-gray-900 hover:text-[#AFCB12] hover:border-[#AFCB12] pb-0.5 flex items-center gap-1 transition-all">
+          <div className="hidden lg:flex items-center gap-8">
+            <Link to="https://assist.zoho.com/install-customer-plugin" className="text-[15px] font-bold text-gray-900 border-b-2 border-gray-900 hover:text-[#AFCB12] hover:border-[#AFCB12] pb-0.5 flex items-center gap-1 transition-all">
+              Remote Support <span className="text-lg font-bold">›</span>
+            </Link>
+            <Link to="https://outlook.office.com/owa/calendar/Consultation@beanbite.com/bookings/" className="text-[15px] font-bold text-gray-900 border-b-2 border-gray-900 hover:text-[#AFCB12] hover:border-[#AFCB12] pb-0.5 flex items-center gap-1 transition-all">
               Book a Consultation <span className="text-lg font-bold">›</span>
             </Link>
           </div>
@@ -186,7 +189,14 @@ const Navbar = () => {
                 
                 <div className="pt-4 border-t border-gray-100">
                   <Link
-                    to="/contact"
+                    to="https://assist.zoho.com/install-customer-plugin"
+                    onClick={() => setIsMenuOpen(false)}
+                    className="block text-center py-3 border-2 border-gray-900 text-gray-900 rounded-lg hover:border-[#AFCB12] hover:text-[#AFCB12] transition-all font-bold"
+                  >
+                    Remote Support
+                  </Link>
+                  <Link
+                    to="https://outlook.office.com/owa/calendar/Consultation@beanbite.com/bookings/"
                     onClick={() => setIsMenuOpen(false)}
                     className="block text-center py-3 border-2 border-gray-900 text-gray-900 rounded-lg hover:border-[#AFCB12] hover:text-[#AFCB12] transition-all font-bold"
                   >
