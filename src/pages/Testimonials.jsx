@@ -43,10 +43,10 @@ const Testimonials = () => {
         >
           <div className="max-w-2xl">
             <h2 className="text-4xl md:text-6xl font-black text-gray-900 mb-6 tracking-tight">
-              Trusted by <span className="text-[#AFCB12]">Industry Leaders</span>
+              Trusted by <span className="text-[#AFCB12]">Our Clients</span>
             </h2>
             <p className="text-gray-500 text-lg">
-              We let our results speak for themselves. Explore the experiences of our partners across the country.
+              We let our results speak for themselves. Explore the experiences of our clients.
             </p>
           </div>
           <div className="hidden lg:flex items-center gap-8 bg-white p-6 rounded-3xl shadow-sm border border-gray-100">
