@@ -220,38 +220,44 @@ const About = () => {
             </div>
             {/* RIGHT IMAGE + BADGE */}
             <motion.div 
-              initial={{ opacity: 0, x: 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.7 }}
-              viewport={{ once: true }}
-              className="relative flex justify-center md:justify-end"
-            >
-              {/* Circle Image */}
-              <motion.div 
-                whileHover={{ scale: 1.01 }}
-                transition={{ duration: 0.3 }}
-                className="w-100 h-100 md:w-115 md:h-115 rounded-full border-4 border-white"
-              >
-                <img
-                  src="/about/commitment.png"
-                  alt="Team"
-                  className="w-full h-full object-cover"
-                />
-                {/* Green Badge */}
-                <motion.div 
-                  initial={{ scale: 0, rotate: -180 }}
-                  whileInView={{ scale: 1, rotate: 0 }}
-                  transition={{ type: "spring", stiffness: 200, delay: 0.31 }}
-                  viewport={{ once: true }}
-                  className="absolute bottom-6 left-6 md:left-auto md:-left-10 bg-[#C5D92D] rounded-full w-34 h-34 flex flex-col items-center justify-center text-center border-4 border-white"
-                >
-                  <span className="text-3xl font-bold text-[#1a2e05] leading-none">25+</span>
-                  <span className="text-xs mt-1 px-2 text-[#1a2e05] font-semibold">
-                    Experience Team Help you
-                  </span>
-                </motion.div>
-              </motion.div>
-            </motion.div>
+  initial={{ opacity: 0, x: 50 }}
+  whileInView={{ opacity: 1, x: 0 }}
+  transition={{ duration: 0.7 }}
+  viewport={{ once: true }}
+  className="relative flex justify-center md:justify-end"
+>
+  {/* Circle Wrapper */}
+  <motion.div 
+    whileHover={{ scale: 1.01 }}
+    transition={{ duration: 0.3 }}
+    className="relative w-100 h-100 md:w-115 md:h-115 rounded-full border-4 border-white overflow-visible"
+  >
+    
+    {/* Image */}
+    <img
+      src="/about/commitment.png"
+      alt="Team"
+      className="w-full h-full object-cover rounded-full"
+    />
+
+    {/* Green Badge */}
+    <motion.div 
+      initial={{ scale: 0, rotate: -180 }}
+      whileInView={{ scale: 1, rotate: 0 }}
+      transition={{ type: "spring", stiffness: 200, delay: 0.31 }}
+      viewport={{ once: true }}
+      className="absolute bottom-6 -left-22 md:-left-22 bg-[#C5D92D] rounded-full w-54 h-54 flex flex-col items-center justify-center text-left border-6 border-white"
+    >
+      <span className="text-6xl font-bold text-[#ffffff] leading-none">
+        25+
+      </span>
+      <span className="text-sm mt-1 px-2 text-[#ffffff] font-semibold">
+        Years Experience <br/> Team Help you
+      </span>
+    </motion.div>
+
+  </motion.div>
+</motion.div>
           </div>
           <motion.div 
             initial={{ scaleX: 0 }}
