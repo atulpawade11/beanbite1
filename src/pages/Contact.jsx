@@ -86,12 +86,12 @@ const Contact = () => {
           >
             {/* Main Heading */}
             <div>
-              <motion.span 
+            <motion.span 
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
                 viewport={{ once: true }}
-                className="inline-block px-6 py-2 bg-[#C5D92D] text-[#1a2e05] font-bold rounded-full text-sm mb-6"
+                className="inline-block px-6 py-2 bg-[#AFCB12] text-[#000000] font-bold rounded-full text-lg mb-6"
               >
                 Get In Touch
               </motion.span>
@@ -100,7 +100,7 @@ const Contact = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.1 }}
                 viewport={{ once: true }}
-                className="text-2xl md:text-3xl font-bold text-gray-900 mb-4"
+                className="text-[34px] md:text-5xl font-bold text-black leading-[1.2]"
               >
                 Personalized support and <br /> assistance today
               </motion.h2>
@@ -186,7 +186,7 @@ const Contact = () => {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7 }}
             viewport={{ once: true }}
-            className="bg-[#f3f4f6] rounded-2xl p-6 md:p-8 contact-from"
+            className="bg-[#F6F6F6] rounded-2xl p-6 md:p-8 contact-from shadow-sm"
           >
             <h2 className="text-2xl font-bold text-gray-900 mb-2">
               Get in <span className="font-extrabold">touch</span> with us

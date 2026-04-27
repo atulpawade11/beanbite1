@@ -43,6 +43,18 @@ const fadeRight = {
   show: { opacity: 1, x: 0 },
 };
 
+const resources = [
+  { name: "CAQH", link: "https://www.caqh.org/solutions", external: true },
+  { name: "Sample Short form", link: "#", external: false },
+  { name: "Sample Full breakdown form", link: "#", external: false },
+  { name: "Medicare Dental Provider Enrollment & Coverage Information", link: "https://www.cms.gov/medicare/coverage/dental", external: true },
+  { name: "FAQ's ADA MEDICARE", link: "https://www.ada.org/resources/practice/legal-and-regulatory/medicare", external: true },
+  { name: "ADA CDT Information", link: "https://www.ada.org/publications/cdt", external: true },
+  { name: "2024 ADA Dental Claim News", link: "https://www.ada.org/publications/cdt/ada-dental-claim-form", external: true },
+  { name: "Review 2024 ADA Dental Claim form", link: "https://www.ada.org/-/media/project/ada-organization/ada/ada-org/files/publications/cdt/2024_completioninstructions_adaclaimform_2024.pdf?rev=fdf22b01262a4fd59f414e5d568412f6&hash=ADCB4A07D15D2AD55256D627B669D023", external: true },
+  { name: "NPI LOOKUP", link: "https://npiregistry.cms.hhs.gov/search", external: true },
+];
+
 // ================= VERTICAL SLIDER =================
 const VerticalSlider = ({ images, duration }) => (
   <div className="overflow-hidden h-[500px]">
@@ -113,23 +125,21 @@ const ClientSuccess = () => {
               <h3 className="text-2xl font-semibold mb-6">Resources</h3>
 
               <ul className="space-y-4 text-sm text-gray-700">
-                {[
-                  "CAQH",
-                  "Sample Short form",
-                  "Sample Full breakdown form",
-                  "Medicare Dental Provider Enrollment & Coverage Information",
-                  "FAQ's ADA MEDICARE",
-                  "ADA CDT Information",
-                  "2024 ADA Dental Claim News",
-                  "Review 2024 ADA Dental Claim form",
-                  "NPI LOOKUP"
-                ].map((item, i) => (
-                  <li
-                    key={i}
-                    className="flex gap-2 items-start hover:text-black cursor-pointer transition"
-                  >
-                    <span className="w-1.5 h-1.5 bg-gray-600 mt-2 rounded-full"></span>
-                    {item}
+                {resources.map((item, i) => (
+                  <li key={i}>
+                    <a
+                      href={item.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={`flex gap-2 items-start hover:underline transition 
+                        ${item.external ? "hover:text-[#AFCB12]" : "hover:text-black"}
+                      `}
+                    >
+                      <span className={`w-1.5 h-1.5 mt-2 rounded-full transition 
+                        ${item.external ? "bg-gray-600 group-hover:bg-[#AFCB12]" : "bg-gray-600"}
+                      `}></span>
+                      {item.name}
+                    </a>
                   </li>
                 ))}
               </ul>

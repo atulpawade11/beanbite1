@@ -2,32 +2,35 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import InnerPageHeader from '../components/InnerPageHeader';
 import PartnerSection from '../components/PartnerSection';
+import ServiceSection from "../components/ServiceSection";
 
-// 1. Container variant to stagger the children (cards)
-const staggerContainer = {
-  hidden: { opacity: 0 },
-  show: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.2, // Delay between each card animation
-    },
-  },
-};
-
-// 2. Individual card animation
-const cardVariants = {
-  hidden: { opacity: 0, y: 30 },
-  show: { 
-    opacity: 1, 
-    y: 0, 
-    transition: { duration: 0.6, ease: "easeOut" } 
-  },
-};
-
-// 3. Simple fade up for text sections
 const fadeInUp = {
-  hidden: { opacity: 0, y: 30 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.6 } }
+  initial: { opacity: 0, y: 30 },
+  animate: { opacity: 1, y: 0 },
+  transition: { duration: 0.6, ease: "easeOut" }
+};
+
+const fadeIn = {  
+    initial: { opacity: 0, y: 20 },
+    animate: { opacity: 1, y: 0 },
+    transition: { duration: 0.5 }
+  };
+
+const fadeInLeft = {
+  initial: { opacity: 0, x: -50 },
+  animate: { opacity: 1, x: 0 },
+  transition: { duration: 0.7, ease: "easeOut" }
+};
+
+const fadeInRight = {
+  initial: { opacity: 0, x: 50 },
+  animate: { opacity: 1, x: 0 },
+  transition: { duration: 0.7, ease: "easeOut" }
+};
+
+const staggerContainer = {
+  initial: {},
+  animate: { transition: { staggerChildren: 0.2 } }
 };
 
 const Services = () => {
@@ -95,49 +98,7 @@ const Services = () => {
       </section>
 
       {/* Services Grid Section */}
-      <section className="bg-gray-50 py-24">
-        <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
-          <motion.div 
-            variants={fadeInUp}
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true }}
-            className="mb-12"
-          >
-            <span className="inline-block px-6 py-2 bg-[#C5D92D] text-[#1a2e05] font-bold rounded-full text-sm mb-6">
-              Services
-            </span>
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
-              We Provide Best Dental <br /> Billing Services
-            </h2>
-          </motion.div>
-
-          {/* This motion.div triggers the staggered card entrance */}
-          <motion.div 
-            variants={staggerContainer}
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true }}
-            className="grid md:grid-cols-3 gap-8"
-          >
-            <ServiceFeatureCard 
-              icon="/services/icon1.png"
-              title="Insurance Credentialing"
-              description="BEANbite strives to provide dentists with higher PPO reimbursement rates and subsequently allow them to obtain better profit margins."
-            />
-            <ServiceFeatureCard 
-              icon="/services/icon2.png"
-              title="Dental Insurance Verification"
-              description="BEANbite takes absolute pride in the quality & accuracy of the Insurance Verifications done by our agents. Our goal is to set up the dental office for success."
-            />
-            <ServiceFeatureCard 
-              icon="/services/icon3.png"
-              title="Billing Services"
-              description="Over the years, many dental practices see their A/R either plateau or go downstream and practice owners turn desperate to fix these issues."
-            />
-          </motion.div>
-        </div>
-      </section>
+      <ServiceSection />
 
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12 py-20">
         <PartnerSection />

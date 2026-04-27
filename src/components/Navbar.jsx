@@ -34,13 +34,13 @@ const Navbar = () => {
           </div>
 
           {/* Desktop Menu */}
-          <div className="hidden lg:flex items-center justify-center flex-1 mx-8">
+          <div className="hidden lg:flex items-center justify-center flex-1 mx-6">
             <div className="flex items-center space-x-8">
-              <Link to="/" className={`text-[15px] font-bold transition-colors ${isActive('/') ? 'text-gray-900 border-b-2 border-[#C5D92D] pb-0.5' : 'text-gray-600 hover:text-[#AFCB12]'}`}>
+              <Link to="/" className={`text-[15px] font-light transition-colors ${isActive('/') ? 'text-[#000000] , font-semibold' : 'text-black hover:text-[#AFCB12]'}`}>
                 Home
               </Link>
               
-              <Link to="/about" className={`text-[15px] font-medium transition-colors ${isActive('/about') ? 'text-[#AFCB12]' : 'text-gray-600 hover:text-[#AFCB12]'}`}>
+              <Link to="/about" className={`text-[15px] font-light transition-colors ${isActive('/about') ? 'text-[#000000] , font-semibold' : 'text-black hover:text-[#AFCB12]'}`}>
                 About Us
               </Link>
               
@@ -48,7 +48,7 @@ const Navbar = () => {
               <div className="relative group py-4">
                 <Link 
                   to="/services" 
-                  className={`flex items-center gap-1.5 text-[15px] font-medium transition-colors ${location.pathname.startsWith('/services') ? 'text-[#AFCB12]' : 'text-gray-600 hover:text-[#AFCB12]'}`}
+                  className={`flex items-center gap-1.5 text-[15px] font-light transition-colors ${location.pathname.startsWith('/services') ? 'text-[#000000] , font-semibold' : 'text-black hover:text-[#AFCB12]'}`}
                 >
                   Services <ChevronDown size={14} strokeWidth={2.5} />
                 </Link>
@@ -71,15 +71,15 @@ const Navbar = () => {
                 </div>
               </div>
               
-              <Link to="/client-success" className={`text-[15px] font-medium transition-colors ${isActive('/client-success') ? 'text-[#AFCB12]' : 'text-gray-600 hover:text-[#AFCB12]'}`}>
+              <Link to="/client-success" className={`text-[15px] font-light transition-colors ${isActive('/client-success') ? 'text-[#000000] , font-semibold' : 'text-black hover:text-[#AFCB12]'}`}>
                 Client & Resources
               </Link>
               
-              <Link to="/blog" className={`text-[15px] font-medium transition-colors ${isActive('/blog') ? 'text-[#AFCB12]' : 'text-gray-600 hover:text-[#AFCB12]'}`}>
+              <Link to="/blog" className={`text-[15px] font-light transition-colors ${isActive('/blog') ? 'text-[#000000] , font-semibold' : 'text-black hover:text-[#AFCB12]'}`}>
                 Blog
               </Link>
               
-              <Link to="/contact" className={`text-[15px] font-medium transition-colors ${isActive('/contact') ? 'text-[#AFCB12]' : 'text-gray-600 hover:text-[#AFCB12]'}`}>
+              <Link to="/contact" className={`text-[15px] font-light transition-colors ${isActive('/contact') ? 'text-[#000000] , font-semibold' : 'text-black hover:text-[#AFCB12]'}`}>
                 Contact Us
               </Link>
             </div>
@@ -87,11 +87,11 @@ const Navbar = () => {
 
           {/* Right Side CTA */}
           <div className="hidden lg:flex items-center gap-8">
-            <Link to="https://assist.zoho.com/install-customer-plugin" className="text-[15px] font-bold text-gray-900 border-b-2 border-gray-900 hover:text-[#AFCB12] hover:border-[#AFCB12] pb-0.5 flex items-center gap-1 transition-all">
-              Remote Support <span className="text-lg font-bold">›</span>
+            <Link to="https://assist.zoho.com/install-customer-plugin" className="text-[16px] font-medium text-black border-b-2 border-black hover:text-[#AFCB12] hover:border-[#AFCB12] pb-0.5 flex items-center gap-1 transition-all">
+              Remote Support <span className="text-lg font-medium">›</span>
             </Link>
-            <Link to="https://outlook.office.com/owa/calendar/Consultation@beanbite.com/bookings/" className="text-[15px] font-bold text-gray-900 border-b-2 border-gray-900 hover:text-[#AFCB12] hover:border-[#AFCB12] pb-0.5 flex items-center gap-1 transition-all">
-              Book a Consultation <span className="text-lg font-bold">›</span>
+            <Link to="https://outlook.office.com/owa/calendar/Consultation@beanbite.com/bookings/" className="text-[16px] font-medium text-black border-b-2 border-black hover:text-[#AFCB12] hover:border-[#AFCB12] pb-0.5 flex items-center gap-1 transition-all">
+              Book a Consultation <span className="text-lg font-medium">›</span>
             </Link>
           </div>
 
