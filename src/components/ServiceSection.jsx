@@ -16,7 +16,7 @@ const staggerContainer = {
 
 const ServicesSection = () => {
   return (
-    <section className="bg-[#F8F8F8] py-24">
+    <section className="bg-[#F8F8F8] py-20">
       <div className="max-w-[1400px] mx-auto px-4 lg:px-12">
 
         <motion.div
