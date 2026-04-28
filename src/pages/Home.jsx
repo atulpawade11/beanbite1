@@ -5,6 +5,7 @@ import blogData from "../data/blogData";
 import { TrendingUp, Calendar, Quote, Star, ArrowLeft, ArrowRight, CheckCircle2 } from 'lucide-react';
 import PartnersSection from '../components/PartnerSection';
 import ServiceSection from "../components/ServiceSection";
+import Testimonial from "../components/Testimonial";
 
 // Animation variants (kept here for page-specific use)
 const fadeInUp = {
@@ -97,7 +98,7 @@ const Home = () => {
             </section>
 
             {/* About Us Section */}
-            <section id="about" className="max-w-[1400px] mx-auto px-4 lg:px-12 mb-24">
+            <section id="about" className="max-w-[1400px] mx-auto px-4 lg:px-12 mb-20">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
                     {/* Left Column */}
                     <motion.div 
@@ -413,154 +414,17 @@ const Home = () => {
                  </div>
             </section>*/}
 
-            <section className="max-w-[1400px] mx-auto px-4 lg:px-12 py-24">
+            <section className="max-w-[1400px] mx-auto px-4 lg:px-12 pt-20 pb-10">
                 <PartnersSection />
             </section>
 
             {/* Testimonial Section */}
-            <section id="testimonials" className="relative overflow-hidden">
-                <div className="max-w-[1400px] mx-auto px-4 lg:px-12">
-                    <motion.div 
-                        initial={{ opacity: 0, scale: 0.9 }}
-                        whileInView={{ opacity: 1, scale: 1 }}
-                        transition={{ duration: 0.8 }}
-                        viewport={{ once: true }}
-                        className="bg-gradient-to-r from-[#AFCB12] to-[#6d8502] rounded-[40px] overflow-hidden flex flex-col md:flex-row shadow-xl relative min-h-[500px]"
-                    >
-                        {/* Background Image & Gradient */}
-                        <div className="absolute inset-0 z-0">
-                            <motion.img 
-                                initial={{ scale: 1.1, opacity: 0 }}
-                                animate={{ scale: 1, opacity: 1 }}
-                                transition={{ duration: 1.2 }}
-                                src="/homeOne/testimonial-home.png" 
-                                alt="Dental Team" 
-                                className="w-full h-full object-cover object-right" 
-                            />
-                        </div> 
-                        {/* Left Side: Text */}
-                        <motion.div 
-                            variants={staggerContainer}
-                            initial="initial"
-                            whileInView="animate"
-                            viewport={{ once: true }}
-                            className="md:w-1/2 p-10  md:p-14 text-white flex flex-col justify-center relative z-10"
-                        >
-                            <motion.span 
-                                variants={fadeIn}
-                                className="inline-block px-6 py-2 bg-[#6C8000] text-[#ffffff] font-bold rounded-full text-lg mb-6 w-max uppercase tracking-wider"
-                            >
-                                 Testimonials
-                            </motion.span>
-                            <motion.h2 
-                                variants={fadeInUp}
-                                className="text-[34px] md:text-5xl font-bold text-white leading-[1.2] mb-6"
-                            >
-                                What our customers say about us
-                            </motion.h2>
-                             
-                            <motion.p 
-                                variants={fadeInUp}
-                                transition={{ delay: 0.2 }}
-                                className="text-[16px] leading-relaxed relative z-10 font-normal mb-8"
-                            >
-                                 " Santosh worked for me for 3 years. She is very flexible, self motivated, detailed oriented so gained my rapid trust in presenting treatment plan to the patients and handled financial aspect related to my patients. She was good at maintaining patient relationship as well as managing dental office."
-                            </motion.p>
-
-                            <motion.div 
-                                variants={fadeIn}
-                                transition={{ delay: 0.4 }}
-                                className="flex items-center gap-4 mb-10"
-                            >
-                                 <div className="w-14 h-14 rounded-full border-2 border-white overflow-hidden">
-                                     <img src="/homeOne/about-us-left-img.png" alt="Lopa Shah" className="w-full h-full object-cover" />
-                                 </div>
-                                 <div>
-                                     <h4 className="font-bold text-lg leading-none mb-1">Lopa Shah</h4>
-                                     <p className="text-sm opacity-80 font-light">Owner Dentist</p>
-                                 </div>
-                            </motion.div>
-
-                            <motion.div 
-                                variants={fadeIn}
-                                transition={{ delay: 0.5 }}
-                                className="flex flex-wrap items-center gap-6"
-                            >
-                                {/* Rating Box */}
-                                <div className="bg-[#384d14]/40 backdrop-blur-sm rounded-lg flex items-center gap-3 px-4 py-3 border border-white/10">
-                                    <div className="w-8 h-8 flex items-center justify-center bg-[#00b67a] rounded text-white">
-                                        <Star size={18} fill="currentColor" />
-                                    </div>
-                                    <div className="flex flex-col">
-                                        <div className="flex text-[#00b67a] space-x-0.5">
-                                            <Star size={12} fill="currentColor" />
-                                            <Star size={12} fill="currentColor" />
-                                            <Star size={12} fill="currentColor" />
-                                            <Star size={12} fill="currentColor" />
-                                            <Star size={12} fill="currentColor" />
-                                        </div>
-                                        <span className="text-[10px] text-white opacity-80 leading-none mt-1">4.3 score, 47 reviews</span>
-                                    </div>
-                                </div>
-
-                                {/* Navigation Arrows */}
-                                <div className="flex gap-2">
-                                    <motion.button whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }} className="w-11 h-11 rounded-full bg-[#7a9305] border border-[#9db520] flex items-center justify-center hover:bg-[#658325] transition-colors text-white">
-                                        <ArrowLeft size={20}/>
-                                    </motion.button>
-                                    <motion.button whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }} className="w-11 h-11 rounded-full bg-[#C5D92D] text-[#fff] border border-[#C5D92D] flex items-center justify-center hover:bg-[#b0c41a] transition-colors">
-                                        <ArrowRight size={20}/>
-                                    </motion.button>
-                                </div>
-                            </motion.div>
-                        </motion.div>
-
-                        {/* Right Side: Image */}
-                        <div className="md:w-1/2 relative flex items-end justify-center overflow-hidden">
-                            <motion.img 
-                                initial={{ y: 100, opacity: 0 }}
-                                whileInView={{ y: 0, opacity: 1 }}
-                                transition={{ duration: 0.8, delay: 0.3 }}
-                                viewport={{ once: true }}
-                                src="/homeOne/testimonial-main-image.png" 
-                                alt="Happy Customer" 
-                                className="relative z-10 h-[90%] w-auto object-contain object-bottom" 
-                            />
-                            
-                            {/* Floating Quote Icon */}
-                            <motion.div 
-                                initial={{ scale: 0, rotate: -45 }}
-                                whileInView={{ scale: 1, rotate: 0 }}
-                                transition={{ type: "spring", stiffness: 100, delay: 0.6 }}
-                                viewport={{ once: true }}
-                                className="absolute top-28 right-14 w-24 h-24 bg-[#AFCB12] rounded-full flex items-center justify-center text-[#4d6600] z-0"
-                            >
-                                <img 
-                                    src="/homeOne/quote.png" 
-                                    alt="Decorative"
-                                    className="w-14 h-14 object-contain"
-                                />
-                            </motion.div>
-
-                            {/* Floating Badge */}
-                            <motion.div 
-                                initial={{ scale: 0, x: "-50%", y: 50 }}
-                                whileInView={{ scale: 1, x: "-50%", y: 0 }}
-                                transition={{ type: "spring", stiffness: 100, delay: 0.8 }}
-                                viewport={{ once: true }}
-                                className="absolute bottom-10 left-1/2 -translate-x-1/16 text-center z-20 w-max"
-                            >
-                                <div className="bg-white px-16 py-3 rounded-full shadow-[0_10px_20px_rgba(0,0,0,0.1)] -rotate-10">
-                                    <span className="font-extrabold text-[#1a2e05] text-2xl">"Awesome Work"</span>
-                                </div>
-                            </motion.div>
-                        </div>
-                    </motion.div>
-                </div>
+            <section className="max-w-[1400px] mx-auto px-4 lg:px-12 pt-10 pb-10">
+                <Testimonial />
             </section>
 
              {/* Blog Section */}
-             <section id="blog" className="pt-24 bg-white relative z-10 overflow-hidden mb-20">
+             <section id="blog" className="pt-10 bg-white relative z-10 overflow-hidden pb-20">
                  <div className="max-w-[1400px] mx-auto px-4 lg:px-12">
                      <motion.div 
                         variants={fadeInUp}
