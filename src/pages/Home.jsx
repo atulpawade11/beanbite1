@@ -43,6 +43,7 @@ const Home = () => {
       
       {/* Hero Section */}
       <section className="max-w-[1400px] mx-auto px-4 lg:px-12 mt-4 mb-20">
+        <Link to="/">
                 <motion.div 
                     initial={{ opacity: 0, scale: 0.95 }}
                     animate={{ opacity: 1, scale: 1 }}
@@ -95,6 +96,7 @@ const Home = () => {
                         </motion.button>
                      </div>
                 </motion.div>
+            </Link>
             </section>
 
             {/* About Us Section */}
@@ -116,16 +118,18 @@ const Home = () => {
                         <h2 className="text-gray-600/90 text-[17px] leading-relaxed mb-8 pr-4">
                             Santosh Rohira, a dentist with international training, is the visionary behind BEANbite.
                         </h2>
-                        <motion.button 
-                            whileHover={{ scale: 1.05 }}
-                            whileTap={{ scale: 0.95 }}
-                            className="bg-[#C5D92D] hover:bg-[#b0c41a] text-[#ffffff] pl-8 pr-2 py-2 rounded-full font-bold text-lg inline-flex items-center gap-4 transition-all shadow-md group mb-10 border border-[4px] border-[#414C00]"
-                        >
-                           <span>More About</span>
-                           <div className="w-10 h-10 bg-[#414C00] rounded-full flex items-center justify-center group-hover:bg-[#1a2e05]/20 transition-colors">
-                             <TrendingUp size={20} className="text-[#fff]" strokeWidth={2.5} />
-                           </div>
-                        </motion.button>
+                        <Link to="/about">
+                            <motion.button 
+                                whileHover={{ scale: 1.05 }}
+                                whileTap={{ scale: 0.95 }}
+                                className="cursor-pointer bg-[#C5D92D] hover:bg-[#b0c41a] text-[#ffffff] pl-8 pr-2 py-2 rounded-full font-bold text-lg inline-flex items-center gap-4 transition-all shadow-md group mb-10 border border-[4px] border-[#414C00]"
+                            >
+                            <span>More About</span>
+                            <div className="w-10 h-10 bg-[#414C00] rounded-full flex items-center justify-center group-hover:bg-[#1a2e05]/20 transition-colors">
+                                <TrendingUp size={20} className="text-[#fff]" strokeWidth={2.5} />
+                            </div>
+                            </motion.button>
+                        </Link>
                         
                         {/* Social Proof */}
                         <div className="flex items-center gap-4">
