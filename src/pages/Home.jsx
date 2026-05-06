@@ -212,7 +212,7 @@ const Home = () => {
                                 className="relative z-10 bg-white border border-[#D9D9D9] pr-[50px] rounded-full w-[280px] h-[280px] flex flex-col items-center justify-center text-center shrink-0"
                             >
                                 <span className="text-[80px] font-bold text-black leading-none">25<sup className="text-4xl">+</sup></span>
-                                <span className="text-lg font-medium text-black mt-2">Years Experience <br /> Team Help you</span>
+                                <span className="text-lg font-medium text-black mt-2">Years Experienced <br /> Team Help you</span>
                             </motion.div>
                             <motion.div 
                                 initial={{ opacity: 0, scale: 0.8 }}

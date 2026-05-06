@@ -41,12 +41,12 @@ export default function Testimonials() {
   }, []);
 
   const nextSlide = () =>
-    setIndex((prev) => (prev + 1) % testimonials.length);
+  setIndex((prev) => (prev + 1) % memoizedTestimonials.length);
 
-  const prevSlide = () =>
-    setIndex((prev) =>
-      prev === 0 ? testimonials.length - 1 : prev - 1
-    );
+const prevSlide = () =>
+  setIndex((prev) =>
+    prev === 0 ? memoizedTestimonials.length - 1 : prev - 1
+  );
 
     useEffect(() => {
         const timer = setInterval(() => {
@@ -143,7 +143,7 @@ export default function Testimonials() {
                   onClick={prevSlide}
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
-                  className="w-11 h-11 rounded-full bg-[#728602] text-[#94AE00] border border-[#9db520] flex items-center justify-center hover:bg-[#658325]"
+                  className="cursor-pointer w-11 h-11 rounded-full bg-[#728602] text-[#94AE00] border border-[#9db520] flex items-center justify-center hover:bg-[#658325]"
                 >
                   <ArrowLeft size={20} />
                 </motion.button>
@@ -152,7 +152,7 @@ export default function Testimonials() {
                   onClick={nextSlide}
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
-                  className="w-11 h-11 rounded-full bg-[#C5D92D] text-white border border-[#C5D92D] flex items-center justify-center hover:bg-[#b0c41a]"
+                  className="cursor-pointer w-11 h-11 rounded-full bg-[#C5D92D] text-white border border-[#C5D92D] flex items-center justify-center hover:bg-[#b0c41a]"
                 >
                   <ArrowRight size={20} />
                 </motion.button>
