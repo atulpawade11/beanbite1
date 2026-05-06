@@ -24,7 +24,7 @@ const Footer = () => {
       Book An Appointment
     </h2>
     <p className="text-[#3f5216] text-lg opacity-90">
-      At vero eos et accusamus et iusto odio dignissimos ducimus quiy blanditiis praesentium.
+      Helping dental practices grow with seamless billing, credentialing, and insurance support.
     </p>
   </div>
 
@@ -32,7 +32,7 @@ const Footer = () => {
     <img src="/homeOne/footer-card-arrow-icon.png" alt="arrow" className="w-[150px] hidden md:block" />
     
     <Link to="https://outlook.office.com/owa/calendar/Consultation@beanbite.com/bookings/" target="_blank">
-      <button className="border border-[#C3C3C3] border-[3px] bg-white text-[#414C00] pl-6 pr-1 py-1.5 rounded-full font-bold text-lg inline-flex items-center gap-4">
+      <button className="cursor-pointer border border-[#C3C3C3] border-[3px] bg-white text-[#414C00] pl-6 pr-1 py-1.5 rounded-full font-bold text-lg inline-flex items-center gap-4">
         <span>Book Now</span>
         <div className="w-10 h-10 bg-[#384d14] rounded-full flex items-center justify-center text-white">
           <TrendingUp size={18} />

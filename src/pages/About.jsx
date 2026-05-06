@@ -252,7 +252,7 @@ const About = () => {
         25+
       </span>
       <span className="text-sm mt-1 px-2 text-[#ffffff] font-semibold">
-        Years Experience <br/> Team Help you
+        Years Experienced <br/> Team Help you
       </span>
     </motion.div>
 
