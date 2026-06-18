@@ -78,7 +78,7 @@ const Home = () => {
                             transition={{ duration: 0.8, delay: 0.4 }}
                             className="space-y-4 text-white/90 text-lg font-medium mb-10 leading-relaxed max-w-xl"
                         >
-                          <p>Does your practice collect at least 98 percent of the total adjusted production?</p>
+                          <p>Does your practice collect at least 98% of the total adjusted production?</p>
                           <p>Do you feel some insurances could provide a better compensation on their contracted fees?</p>
                         </motion.div>
                         <Link to="/contact">
@@ -164,7 +164,7 @@ const Home = () => {
                             </div>
 
                             <span className="font-bold text-gray-900">
-                                10M+ Impact Across the World.
+                                10M+ Impact Across the US.
                             </span>
                             </div>
                     </motion.div>
@@ -182,7 +182,7 @@ const Home = () => {
                         </span>
 
                         <p className="text-gray-600 text-lg mb-2">
-                            Some Interesting Facts About Us
+                            Interesting Facts
                         </p>
 
                         <h2 className="text-[34px] md:text-5xl font-bold text-black leading-[1.2] mb-6">
@@ -190,13 +190,22 @@ const Home = () => {
                             Behind <span className="text-[#AFCB12]">BEANbite</span>
                         </h2>
 
-                        <p className="text-gray-600 text-lg mb-6">
+                        <p className="text-gray-600 text-lg mb-6">BEANbite was founded in 2016 and its name is based on the idea of helping dental practices add more &quot;beans&quot; (revenue) to their bottom line. What started as a dental credentialing
+                        company has evolved into a full revenue cycle management partner that helps practices with
+                        credentialing, PPO fee negotiations, insurance verification, dental billing, accounts receivable
+                        management, and practice growth strategies.</p>
+                        <p className="text-gray-600 text-lg mb-6">In addition, BEANbite assists dental practices with insurance audits, documentation reviews, overpayment disputes, recoupment requests, and payer compliance challenges, helping providers protect their revenue and reduce audit-related risk.</p>
+
+                        <p className="text-gray-600 text-lg mb-6">Together, these services allow dental practices to focus on patient care while maintaining a healthy, compliant, and profitable financial operation.</p>
+                        <p className="text-gray-600 text-lg mb-6">At BEANbite, every bean counts. We help dental practices capture the revenue they&#39;ve earned and grow a stronger bottom line.</p>
+
+                        {/*<p className="text-gray-600 text-lg mb-6">
                             BEANbite is a specialized dental support company focused on insurance credentialing,
                             PPO fee negotiations, and revenue cycle optimization for dental practices across the U.S.
                             We help dentists reduce administrative burden and maximize reimbursements.
                         </p>
 
-                       {/* <p className="text-gray-600 text-lg">
+                        <p className="text-gray-600 text-lg">
                         Founded by dental professionals, our mission is to ensure every practice gets fair
                         insurance participation, faster approvals, and stronger financial performance through
                         expert billing and credentialing support.
@@ -211,7 +220,7 @@ const Home = () => {
                                 viewport={{ once: true }}
                                 className="relative z-10 bg-white border border-[#D9D9D9] pr-[50px] rounded-full w-[280px] h-[280px] flex flex-col items-center justify-center text-center shrink-0"
                             >
-                                <span className="text-[80px] font-bold text-black leading-none">25<sup className="text-4xl">+</sup></span>
+                                <span className="text-[80px] font-bold text-black leading-none">20<sup className="text-4xl">+</sup></span>
                                 <span className="text-lg font-medium text-black mt-2">Years Experienced <br /> Team Help you</span>
                             </motion.div>
                             <motion.div 
@@ -459,11 +468,13 @@ const Home = () => {
                             
                             {/* Image */}
                             <div className="rounded-[32px] overflow-hidden mb-6 h-[280px]">
-                            <img
-                                src={post.image}
-                                alt={post.title}
-                                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                            />
+                            <Link to={`/blog/${post.id}`}>
+                                <img
+                                    src={post.image}
+                                    alt={post.title}
+                                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                                />
+                            </Link>
                             </div>
 
                             {/* Date */}
@@ -474,9 +485,11 @@ const Home = () => {
                             </div>
 
                             {/* Title */}
-                            <h3 className="text-[22px] font-bold text-black mb-6 leading-snug pr-4">
-                            {post.title}
-                            </h3>
+                            <Link to={`/blog/${post.id}`}>
+                                <h3 className="text-[22px] font-bold text-black mb-6 leading-snug pr-4">
+                                    {post.title}
+                                </h3>
+                            </Link>
 
                             <div className="border-t border-[#B2B2B2] opacity-50 mb-6"></div>
 
