@@ -66,7 +66,6 @@ const ServicesSection = () => {
           </h2>
         </motion.div>
 
-        {/* Swiper Slider with Loop - Forward Only */}
         <div className="relative">
           <Swiper
             modules={[Navigation, Pagination, Autoplay]}
