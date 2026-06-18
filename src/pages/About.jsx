@@ -84,7 +84,7 @@ const About = () => {
                 className="rounded-2xl overflow-hidden shadow-xl"
               >
                 <img 
-                  src="/about/about-intro.png" 
+                  src="/about/dr.png" 
                   alt="Dr. Santosh Rohira" 
                   className="w-full h-auto object-cover"
                 />
@@ -249,7 +249,7 @@ const About = () => {
       className="absolute bottom-6 -left-22 md:-left-22 bg-[#C5D92D] rounded-full w-54 h-54 flex flex-col items-center justify-center text-left border-6 border-white"
     >
       <span className="text-6xl font-bold text-[#ffffff] leading-none">
-        25+
+        20+
       </span>
       <span className="text-sm mt-1 px-2 text-[#ffffff] font-semibold">
         Years Experienced <br/> Team Help you
