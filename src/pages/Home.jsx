@@ -190,16 +190,11 @@ const Home = () => {
                             Behind <span className="text-[#AFCB12]">BEANbite</span>
                         </h2>
 
-                        <p className="text-gray-600 text-lg mb-6">BEANbite was founded in 2016 and its name is based on the idea of helping dental practices add more &quot;beans&quot; (revenue) to their bottom line. What started as a dental credentialing
-                        company has evolved into a full revenue cycle management partner that helps practices with
-                        credentialing, PPO fee negotiations, insurance verification, dental billing, accounts receivable
-                        management, and practice growth strategies.</p>
-                        <p className="text-gray-600 text-lg mb-6">In addition, BEANbite assists dental practices with insurance audits, documentation reviews, overpayment disputes, recoupment requests, and payer compliance challenges, helping providers protect their revenue and reduce audit-related risk.</p>
+                        <p className="text-gray-600  text-[17px] mb-6">Founded in 2016, BEANbite was built on a simple idea, helping dental practices add    more "beans" (revenue) to their bottom line. Today, we are a full-service dental revenue cycle management company specializing in PPO optimization, credentialing, billing, accounts receivable, insurance audits, and payer compliance. 
+                        </p>
+                        <p className="text-gray-600  text-[17px] mb-6">At BEANbite, every bean counts. We help dental practices capture the revenue they&#39;ve earned and grow a stronger bottom line.</p>
 
-                        <p className="text-gray-600 text-lg mb-6">Together, these services allow dental practices to focus on patient care while maintaining a healthy, compliant, and profitable financial operation.</p>
-                        <p className="text-gray-600 text-lg mb-6">At BEANbite, every bean counts. We help dental practices capture the revenue they&#39;ve earned and grow a stronger bottom line.</p>
-
-                        {/*<p className="text-gray-600 text-lg mb-6">
+                        {/*<p className="text-gray-600  text-[17px] mb-6">
                             BEANbite is a specialized dental support company focused on insurance credentialing,
                             PPO fee negotiations, and revenue cycle optimization for dental practices across the U.S.
                             We help dentists reduce administrative burden and maximize reimbursements.
@@ -230,7 +225,7 @@ const Home = () => {
                                 viewport={{ once: true }}
                                 className="relative -ml-20 z-20 rounded-full overflow-hidden w-[280px] h-[280px]"
                             >
-                                <img src="/homeOne/about-us-right-img.png" alt="Team Discussion" className="w-full h-full object-cover" />
+                                <img src="/services/consulting-audit/dental-insurance-credentialing-experts-behind-BEANbite.jpg" alt="Team Discussion" className="w-full h-full object-cover" />
                             </motion.div>
                         </div>
                     </motion.div>
@@ -303,7 +298,7 @@ const Home = () => {
                                 whileTap={{ scale: 0.95 }}
                                 className="cursor-pointer border border-[4px] border-[#00000025] bg-white hover:bg-gray-50 text-[#414C00] pl-8 pr-2 py-2 rounded-full font-semibold text-[16px] inline-flex items-center gap-4 transition-all shadow-lg group"
                             >
-                                <span>Book a Consulting</span>
+                                <span>Book a Consultation</span>
                                 <div className="w-10 h-10 bg-[#414C00] rounded-full flex items-center justify-center group-hover:bg-[#1a2e05]/90 transition-colors">
                                     <TrendingUp size={20} className="text-[#fff]" strokeWidth={2.5} />
                                 </div>

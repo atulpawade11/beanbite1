@@ -35,9 +35,7 @@ const InsuranceVerification = () => {
           <motion.div variants={fadeInUp} initial="hidden" whileInView="show">
             <h2 className="text-3xl font-bold mb-6 text-gray-900">For Specialists we provide customized forms</h2>
             <p className="text-gray-600 text-sm leading-relaxed mb-6">
-              BEANbite takes absolute pride in the quality & accuracy of the Insurance Verifications done by our agents. 
-              Our goal is to set up the dental office for success. Obtaining a 'comprehensive insurance breakdown form' 
-              does demand extra time and effort, involving extended calls to insurance companies for every new patient...
+            BEANbite takes absolute pride in the quality & accuracy of the Insurance Verifications done by our agents. Our goal is to set up the dental office for success. Obtaining a ‘comprehensive insurance breakdown form’ does demand extra time and effort, involving extended calls to insurance companies for every new patient or to annually update the plan details of existing patients. The complexity arises from the numerous clauses introduced by insurance companies in their plans, making it challenging to decipher the information provided on their fax backs and websites. Consequently, the dental office in-house staff is compelled to seek comprehensive and standardized breakdown forms to effectively navigate this intricacy. Meticulous insurance verifications are the key to providing accurate treatment plans, boosting in-office over-the-counter collections, and fostering a positive cycle of robust cash flow. Additionally, satisfied patients often become a source of valuable referrals, emphasizing the pivotal role of meticulous insurance verification processes.
             </p>
             <p className="text-gray-600 text-sm leading-relaxed">
               BEANbite Dental Insurance Verification Services are reliable, prompt and customizable on two main form types for General practices.
@@ -79,7 +77,7 @@ const InsuranceVerification = () => {
                 className="relative rounded-[2.5rem] overflow-hidden shadow-xl"
             >
                 <img 
-                src="/services/dental2.png" 
+                src="/services/short-form.png" 
                 alt="Short Form" 
                 className="w-full h-[450px] object-cover" 
                 />

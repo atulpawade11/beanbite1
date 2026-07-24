@@ -10,8 +10,8 @@ import "swiper/css/navigation";
 const PartnerSection = () => {
   // Different partner logos for Row 1 and Row 2
   const row1Logos = [
-    { name: "Traglons", tagline: "The next level in dentistry", image: "/homeOne/partner-logos/p1.png" },
-    { name: "New England Dental", tagline: "Family Dentistry & Smile Design + Esthetics Program", image: "/homeOne/partner-logos/p2.png" },
+    { name: "Traglons", tagline: "The next level in dentistry", image: "/homeOne/partner-logos/p13.svg" },
+    { name: "New England Dental", tagline: "Family Dentistry & Smile Design + Esthetics Program", image: "/homeOne/partner-logos/p14.webp" },
     { name: "Smilesavers", tagline: "Dentist", image: "/homeOne/partner-logos/p3.png" },
     { name: "Dental Associate Group", tagline: "Where Healthy Smiles are all about YOU...", image: "/homeOne/partner-logos/p4.png" },
     { name: "Monroe Dental Arts", tagline: "", image: "/homeOne/partner-logos/p5.png" },
@@ -25,6 +25,7 @@ const PartnerSection = () => {
     { name: "Summit Dental Specialists", tagline: "Advanced Dental Solutions", image: "/homeOne/partner-logos/p10.jpg" },
     { name: "Harbor Dental Associates", tagline: "Where Your Smile Matters", image: "/homeOne/partner-logos/p11.jpg" },
     { name: "Valley Dental Care", tagline: "Quality Care for All Ages", image: "/homeOne/partner-logos/p12.jpg" },
+    { name: "Valley Dental Care", tagline: "Quality Care for All Ages", image: "/homeOne/partner-logos/p15.png" },
   ];
 
   // Refs for swiper instances
@@ -134,7 +135,7 @@ const LogoCard = ({ partner, delay }) => (
     whileInView={{ opacity: 1, scale: 1 }}
     transition={{ duration: 0.5, delay }}
     whileHover={{ scale: 1.05 }}
-    className="bg-white h-20 flex items-center justify-center transition-shadow cursor-pointer border border-[#D8D8D8] rounded-md"
+    className="bg-white h-20 flex items-center justify-center transition-shadow cursor-pointer border border-[#D8D8D8] rounded-md py-1 px-1"
   >
     <img src={partner.image} alt={partner.name} className="max-w-full max-h-full object-contain" />
   </motion.div>

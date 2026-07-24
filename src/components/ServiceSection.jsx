@@ -62,7 +62,7 @@ const ServicesSection = () => {
           </span>
 
           <h2 className="text-[34px] md:text-5xl font-bold text-black leading-[1.2]">
-            We Provide Reliable Dental Billing, Credentialing & <br />Insurance Solutions for Growing Practices
+            Reliable Dental Billing, Credentialing & <br />Insurance Solutions for Growing Practices
           </h2>
         </motion.div>
 

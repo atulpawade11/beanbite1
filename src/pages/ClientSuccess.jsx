@@ -7,8 +7,8 @@ import PartnerSection from "../components/PartnerSection";
 
 // ================= CLIENT IMAGES =================
 const column1 = [
-  "/client/client1.png",
-  "/client/client2.png",
+  "/client/client13.svg",
+  "/client/client14.webp",
   "/client/client3.png",
   "/client/client4.png",
 ];
@@ -25,6 +25,7 @@ const column3 = [
   "/client/client10.jpg",
   "/client/client11.jpg",
   "/client/client12.jpg",
+  "/client/client15.png",
 ];
 
 // ================= ANIMATION =================

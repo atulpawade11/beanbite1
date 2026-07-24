@@ -76,7 +76,7 @@ const About = () => {
             {/* Left Column - Image */}
             <motion.div 
               variants={fadeInLeft}
-              className="relative order-1"
+              className="relative order-1 p-16"
             >
               <motion.div 
                 whileHover={{ scale: 1.02 }}
@@ -235,7 +235,7 @@ const About = () => {
     
     {/* Image */}
     <img
-      src="/about/commitment.png"
+      src="/services/consulting-audit/service-commitment.jpg"
       alt="Team"
       className="w-full h-full object-cover rounded-full"
     />

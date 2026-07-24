@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { CheckCircle2, ChevronDown } from 'lucide-react';
+import { CheckCircle2, ChevronDown, ChevronUp, Rocket, Handshake, ShieldCheck} from 'lucide-react';
 import InnerPageHeader from '../components/InnerPageHeader';
 import PartnerSection from '../components/PartnerSection';
 
@@ -17,63 +17,185 @@ const Credentialing = () => {
         "TIN (Tax Identification Number)", "NPI (National Provider Identifier)",
         "DEA (Drug Enforcement Agency) registration", "W-9 form (needed for practice address)",
         "Professional Liability Insurance", "Bill of sale for acquisition practices",
-        "Lease document", "Specialty school certificate-for specialists", "Sellers UCR Fee if possible"
+        "Lease document (For Denti-Cal and Medicaid)", "Specialty school certificate-for specialists", "Sellers UCR Fee if possible"
     ];
 
     const workflowSteps = [
         {
           question: "Establish your office UCR fee",
-          answer: "We analyze your local zip code market data to set competitive 'Usual, Customary, and Reasonable' fees that maximize your baseline revenue."
+          answer: "These fees set standard pricing, aiding insurance reimbursement while offering transparency to patients about expected costs, whether or not covered by insurance. We utilize a third-party fee analysis to generate UCR fees for your office zip code. Most insurance requires us to submit your UCR fees as part of the negotiation process."
         },
         {
           question: "Create an NPI type 2 if essential",
-          answer: "If your practice is incorporated, we handle the Type 2 NPI application to ensure proper organizational billing and credentialing."
+          answer: "This NPI is vital for seamless electronic transactions, particularly for claims submissions and compliance with HIPAA regulations. We’re here to assist in ensuring your practice complies with essential standards for electronic healthcare transactions."
         },
         {
-          question: "Evaluate and choose the top 30 codes that can optimize revenue",
-          answer: "We identify the high-frequency procedures in your practice and focus negotiations on these codes to ensure the highest return on investment."
+          question: "Evaluate and choose the top 30 codes that can optimize revenue for your practice",
+          answer: "We’ll collaborate with you to create a specialized list of codes tailored to your specialty, allowing us to concentrate negotiations on the most impactful codes for your dental practice. It’s essential to emphasize that we strive to initiate fee discussions for all CDT codes with insurance providers. Employing this focused set of 30 codes enhances the effectiveness of our negotiations and simplifies the PPO fee analysis process, offering a more manageable and insightful approach compared to assessing the entire spectrum of CDT codes."
         },
         {
           question: "Engage in fee negotiations with the 'negotiable' PPO plans",
-          answer: "Our experts communicate directly with insurance carriers to leverage your practice's strengths for higher reimbursement rates."
+          answer: "conduct a comprehensive PPO fee analysis, and present participation options with a plan directly or through shared relationships. It is important to note fee negotiations can take up to 90 days."
         },
         {
-          question: "Credentialing with planned PPO insurance & umbrella networks",
-          answer: "We manage the entire application process for both direct contracts and umbrella networks like Zelis or Maverest to ensure total coverage."
+          question: "Credentialing with planned PPO insurance & umbrella networks & (by choice, HMO insurance)",
+          answer: "Once the dentist has examined and given approval for the negotiated PPO fee schedules and chosen participation options, we proceed to the credentialing phase. It is important to note that credentialing applications will be submitted for processing without any delays for insurance that do not engage in fee negotiations upon review and consent of the dentist, as in the case of Delta Dental."
         },
         {
           question: "Properly Structure your participation to optimize",
-          answer: "We determine the best 'Leased Network' vs 'Direct' pathways to avoid lower fee schedules from overlapping networks."
+          answer: "with the highest paying networks as planned in phase 3 by submitting the necessary opt-out letter and ensuring the negotiated PPO Contracts are processed in a timely fashion"
         },
         {
           question: "Fee schedule entry",
-          answer: "Once negotiated, we ensure all new fee schedules are accurately updated in your Practice Management Software (Open Dental, Eaglesoft, etc.)."
+          answer: "Fee schedule entry into the practice management software (optional & separate service)"
         },
         {
           question: "Copies of all final fee schedules",
-          answer: "You receive full digital copies of every negotiated contract and fee schedule for your permanent office records."
+          answer: "Copies of all final fee schedules and contracts will be provided to you at the completion of the project."
         }
+    ];
+
+    const stages = [
+        {
+          title: "Start-Ups",
+          description:
+            "We help new practices get credentialed and in-network faster.",
+          icon: Rocket,
+        },
+        {
+          title: "Acquisitions",
+          description:
+            "We streamline transitions so you can focus on growth, not paperwork.",
+          icon: Handshake,
+        },
+        {
+          title: "Established Practices",
+          description:
+            "We optimize PPO participation and fees to maximize your revenue.",
+          icon: ShieldCheck,
+        },
     ];
 
     return (
         <div className="bg-white">
-            <InnerPageHeader title="Insurance Credentialing Service" breadcrumb="Services / Credentialing" />
+            <InnerPageHeader title="Stretagic Dental Credentialing & PPO Fee Nagotiations" breadcrumb="Services / Credentialing" />
 
             {/* 1. Top Section: We Cater to Start-up... */}
             <section className="max-w-[1400px] mx-auto px-6 lg:px-16 py-20">
-                <div className="grid lg:grid-cols-2 gap-12 items-center">
-                    <motion.div variants={fadeInUp} initial="hidden" whileInView="show">
-                        <h2 className="text-2xl font-bold mb-4 text-gray-900 leading-tight">
-                        We cater to start-up practices, dental practices undergoing acquisition, and actively participate in PPO fee negotiations for established dental practices.
+                <div className="grid lg:grid-cols-2 gap-16 items-center">
+                    {/* LEFT SIDE */}
+                    <motion.div
+                        variants={fadeInUp}
+                        initial="hidden"
+                        whileInView="show"
+                        viewport={{ once: true }}
+                    >
+                        <h2 className="text-3xl lg:text-4xl font-bold mb-4 text-gray-900 leading-tight">
+                            Helping You{" "}
+                            <span className="text-[#AFCB12]">Succeed</span> at Every Stage
                         </h2>
-                        <p className="text-[#AFCB12] font-bold mb-4">New credentialing:</p>
-                        <p className="text-gray-600 text-sm leading-relaxed">
-                        New credentialing: A brand new or initial contract of the dentist requiring credentialing with HMO, PPO, EPO and Dent-Cal Insurances. Typically, PPO fee negotiations require 90 to 120 days, and an additional 3 to 12 weeks are allocated for the processing of credentialing contracts. It’s crucial to recognize that fee negotiation is a time-consuming process as insurance companies may not be quick to enhance reimbursement rates, and various obstacles need to be addressed. Moreover, each offer should be carefully assessed not only for its financial implications but also to evaluate the overall viability of remaining with the PPO plan. Therefore, meticulous planning well in advance is essential.
-                        </p>
+
+                        {/* Description */}
+                        <div className="mb-4">
+                             <p className="text-gray-600 text-sm lg:text-base">
+                                A brand new or initial contract of the dentist requiring credentialing with
+                                HMO, PPO, EPO and Dent-Cal Insurances. Typically, PPO fee negotiations
+                                require <strong>90 to 120 days</strong>, and an additional{" "}
+                                <strong>3 to 12 weeks</strong> are allocated for the processing of
+                                credentialing contracts.
+                                <br />
+                                It's crucial to recognize that fee negotiation is a time-consuming process,
+                                as insurance companies may not be quick to enhance reimbursement rates and
+                                various obstacles need to be addressed.
+                                <br />
+                                Moreover, each offer should be carefully assessed not only for its
+                                financial implications but also to evaluate the overall viability of
+                                remaining with the PPO plan. Therefore, meticulous planning well in advance
+                                is essential.
+                            </p>
+                        </div>
+
+                        <div className="relative">
+
+                            {/* Desktop Connecting Line */}
+                            <div className="hidden lg:block absolute top-6 left-[13%] right-[13%] h-[2px] bg-[#AFCB12]/30" />
+
+                            {/* Mobile Vertical Line */}
+                            <div className="absolute left-10 top-10 bottom-10 w-[2px] bg-[#AFCB12]/30 lg:hidden" />
+
+                            <div className="flex flex-col lg:flex-row lg:justify-between gap-12 lg:gap-6">
+
+                            {stages.map((stage, index) => {
+                                const Icon = stage.icon;
+
+                                return (
+                                <motion.div
+                                    key={index}
+                                    initial={{ opacity: 0, y: 30 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    transition={{
+                                    duration: 0.5,
+                                    delay: index * 0.2,
+                                    }}
+                                    viewport={{ once: true }}
+                                    className="relative flex items-start lg:flex-col lg:items-center w-full"
+                                >
+                                    {/* Icon */}
+                                    <div className="relative z-10 flex-shrink-0">
+
+                                    <div className="w-20 h-20 rounded-full border-2 border-[#AFCB12] bg-white flex items-center justify-center shadow-md">
+                                        <Icon className="w-10 h-10 text-[#7A9A01]" />
+                                    </div>
+
+                                    {/* Desktop connector dot */}
+                                    {index !== stages.length - 1 && (
+                                        <span className="hidden lg:block absolute top-1/2 -right-17 -translate-y-1/2 w-3 h-3 rounded-full bg-[#7A9A01]" />
+                                    )}
+                                    </div>
+
+                                    {/* Text */}
+                                    <div className="ml-6 lg:ml-0 lg:mt-3 text-left lg:text-center">
+
+                                    <h3 className="text-md font-semibold text-gray-900">
+                                        {stage.title}
+                                    </h3>
+
+                                    <p className="mt-3 text-sm leading-5 text-gray-600 max-w-[220px]">
+                                        {stage.description}
+                                    </p>
+
+                                    </div>
+                                </motion.div>
+                                );
+                            })}
+
+                            </div>
+                        </div>
+
+                        {/* Bottom Progress */}
+                        <div className="hidden lg:flex justify-center items-center mt-14">
+                            <div className="w-36 h-[2px] bg-gray-300"></div>
+
+                            <div className="w-14 h-1 rounded-full bg-[#AFCB12] mx-3"></div>
+
+                            <div className="w-36 h-[2px] bg-gray-300"></div>
+                        </div>
                     </motion.div>
-                    <div className="relative">
-                        <img src="/services/credentialing1.png" alt="Credentialing" className="rounded-2xl shadow-2xl border-l-[12px] border-b-[12px] border-[#AFCB12]/20" />
-                    </div>
+
+                    {/* RIGHT SIDE */}
+                    <motion.div
+                        variants={fadeInUp}
+                        initial="hidden"
+                        whileInView="show"
+                        viewport={{ once: true }}
+                        className="relative"
+                    >
+                    <img
+                        src="/services/credentialing-new.png"
+                        alt="Credentialing"
+                        className="rounded-2xl shadow-xl w-full"
+                    />
+                    </motion.div>
                 </div>
             </section>
 
@@ -117,7 +239,7 @@ const Credentialing = () => {
                 {/* ================== FULL BLEED IMAGE ================== */}
                 <div className="relative lg:absolute lg:top-0 lg:right-0 w-full lg:w-1/2 h-[300px] sm:h-[400px] lg:h-full px-6 lg:px-0">
                     <img 
-                        src="/services/credentialing2.png"
+                        src="/services/ppo.png"
                         alt="PPO Negotiations" 
                         className="w-full h-full object-cover rounded-2xl shadow-xl w-full"
                     />
@@ -128,7 +250,7 @@ const Credentialing = () => {
             <section className="max-w-[1400px] mx-auto px-6 lg:px-16 py-20">
                 <div className="grid lg:grid-cols-5 gap-12 items-center">
                     <div className="lg:col-span-2">
-                        <img src="/services/credentialing3.png" alt="Documents" className="w-full aspect-square object-cover" />
+                        <img src="/services/doc-required.png" alt="Documents" className="w-full aspect-square object-cover  rounded-tr-2xl rounded-bl-2xl" />
                     </div>
                     <div className="lg:col-span-3">
                         <h2 className="text-3xl font-bold mb-8">Documents required for credentialing:</h2>
@@ -146,48 +268,80 @@ const Credentialing = () => {
 
             {/* 4. Workflow Accordion Section */}
             <section className="bg-white mb-20">
-                <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
-                    <h2 className="text-3xl font-bold text-center mb-12">
-                        BEANbite Credentialing and Fee <br/> Negotiations Workflow
-                    </h2>
+    <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
+        <h2 className="text-3xl font-bold text-center mb-4">
+            BEANbite Credentialing and Fee <br/> Negotiations Workflow
+        </h2>
+        <p className="text-center text-gray-500 mb-12 max-w-2xl mx-auto">
+            Follow our strategic 8-step process for optimal results
+        </p>
+        
+        <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-6">
+            {workflowSteps.map((step, i) => {
+                const [isExpanded, setIsExpanded] = useState(false);
                 
-                    <div className="grid md:grid-cols-2 gap-4 items-start">
-                        {workflowSteps.map((step, i) => (
-                        <div key={i} className="flex flex-col">
-                            <button 
-                            onClick={() => setOpenStep(openStep === i ? null : i)}
-                            className={`cursor-pointer border border-gray-100 rounded-xl p-5 flex justify-between items-center transition-all duration-300 bg-[#fcfcfc] w-full text-left ${
-                                openStep === i ? "shadow-md border-[#AFCB12]/30" : "hover:shadow-sm"
-                            }`}
-                            >
-                            <span className="text-sm font-bold text-gray-800 pr-4">{step.question}</span>
-                                <ChevronDown 
-                                size={18} 
-                                className={`text-gray-400 transition-transform duration-300 ${openStep === i ? "rotate-180" : ""}`} 
-                                    />
-                            </button>
-
-                            {/* Animated Answer Box */}
-                            <AnimatePresence>
-                            {openStep === i && (
-                                <motion.div
-                                initial={{ height: 0, opacity: 0 }}
-                                animate={{ height: "auto", opacity: 1 }}
-                                exit={{ height: 0, opacity: 0 }}
-                                transition={{ duration: 0.3 }}
-                                className="overflow-hidden"
-                                >
-                                <div className="p-5 text-sm text-gray-600 bg-gray-50/50 rounded-b-xl border-x border-b border-gray-100 -mt-2 pt-6">
-                                    {step.answer}
+                return (
+                    <motion.div
+                        key={i}
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.4, delay: i * 0.05 }}
+                        viewport={{ once: true }}
+                        className="group relative"
+                    >
+                        <div className="h-full bg-gradient-to-br from-white to-gray-50 rounded-2xl p-6 border border-gray-200 hover:border-[#AFCB12] transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+                            {/* Step Number */}
+                            <div className="flex items-center gap-3 mb-4">
+                                <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-[#AFCB12]/10 text-[#AFCB12] font-bold text-sm group-hover:bg-[#AFCB12] group-hover:text-white transition-colors">
+                                    {String(i + 1).padStart(2, '0')}
+                                </span>
+                                <div className="h-1 flex-1 bg-[#AFCB12]/20 rounded-full">
+                                    <div className="h-full w-0 group-hover:w-full bg-[#AFCB12] rounded-full transition-all duration-700"></div>
                                 </div>
-                                </motion.div>
-                            )}
-                            </AnimatePresence>
+                            </div>
+                            
+                            {/* Content */}
+                            <h3 className="font-bold text-gray-900 mb-3 text-sm leading-tight">
+                                {step.question}
+                            </h3>
+                            
+                            {/* Text with Read More/Read Less */}
+                            <div className="relative">
+                                <div 
+                                    className={`overflow-hidden transition-all duration-500 ${
+                                        isExpanded ? 'max-h-96' : 'max-h-[4.5rem]'
+                                    }`}
+                                >
+                                    <p className="text-gray-600 text-sm leading-relaxed">
+                                        {step.answer}
+                                    </p>
+                                </div>
+                                
+                                {/* Gradient overlay when collapsed */}
+                                {!isExpanded && (
+                                    <div className="absolute bottom-0 left-0 right-0 h-8 bg-gradient-to-t from-gray-50 to-transparent pointer-events-none"></div>
+                                )}
+                            </div>
+                            
+                            {/* Read More/Less Button */}
+                            <button
+                                onClick={() => setIsExpanded(!isExpanded)}
+                                className="mt-3 text-[#AFCB12] text-xs font-medium flex items-center gap-1 hover:gap-2 transition-all duration-300 group/btn"
+                            >
+                                <span>{isExpanded ? 'Read less' : 'Read more'}</span>
+                                {isExpanded ? (
+                                    <ChevronUp size={14} className="transition-transform" />
+                                ) : (
+                                    <ChevronDown size={14} className="transition-transform" />
+                                )}
+                            </button>
                         </div>
-                        ))}
-                    </div>
-                </div>
-            </section>
+                    </motion.div>
+                );
+            })}
+        </div>
+    </div>
+</section>
 
             {/* 5. Partner Section */}
             <div className="max-w-[1400px] mx-auto px-6 lg:px-12 pb-20">

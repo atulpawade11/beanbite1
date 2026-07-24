@@ -10,6 +10,7 @@ import Services from "./pages/Services";
 import Credentialing from './pages/Credentialing';
 import InsuranceVerification from './pages/InsuranceVerification';
 import BillingServices from './pages/BillingServices';
+import ConsultingAndAudit from './pages/ConsultingAndAudit';
 import Blog from './pages/Blog';
 import BlogDetails from './pages/BlogDetails';
 import Contact from './pages/Contact';
@@ -30,6 +31,7 @@ function App() {
           <Route path="/services/credentialing" element={<Credentialing />} />
           <Route path="/services/verification" element={<InsuranceVerification />} />
           <Route path="/services/billing" element={<BillingServices />} />
+          <Route path="/services/consultingandaudit" element={<ConsultingAndAudit />} />
           <Route path="/career" element={<Career />} />
           <Route path="/client-success" element={<ClientSuccess />} />
           <Route path="/testimonials" element={<Testimonials />} />

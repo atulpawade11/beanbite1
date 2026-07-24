@@ -54,9 +54,7 @@ const Services = () => {
               No setup fee or long-term contract
             </p>
             <p className="text-gray-600 leading-relaxed mb-8">
-              We do not charge any set-up fee and our contracts are not more than 12 months long. 
-              Most dentists are pleased with the outcome of our work and typically experience a 
-              increase in collection rates...
+              We do not charge any set-up fee and our contracts are not more than 12 months long. Most dentist are pleased with the outcome of our work and typically experience a increase in collection rates and their A/R drops to half of monthly collection amounts with a year. We accurately adjust patient ledgers with appropriate write-off and adjustments so billing patients become easier and more fruitful results can/are expected.
             </p>
           </motion.div>
 
@@ -72,7 +70,32 @@ const Services = () => {
               initial={{ x: -20, opacity: 0 }}
               whileInView={{ x: 0, opacity: 1 }}
               transition={{ delay: 0.2 }}
-              src="/services/ser1.png" 
+              src="/services/consulting-audit/start-dental-billing-service2.jpg" 
+              className="absolute left-0 bottom-0 w-2/3 h-2/3 object-cover rounded-2xl shadow-xl z-10 border-4 border-white"
+              alt="Team"
+            />
+            <motion.img 
+              initial={{ x: 20, opacity: 0 }}
+              whileInView={{ x: 0, opacity: 1 }}
+              transition={{ delay: 0.4 }}
+              src="/services/consulting-audit/start-dental-billing-service3.jpg" 
+              className="absolute right-0 top-0 w-2/3 h-2/3 object-cover rounded-2xl shadow-lg"
+              alt="Consultation"
+            />
+            <motion.div 
+               initial={{ scale: 0 }}
+               whileInView={{ scale: 1 }}
+               className="absolute right-4 bottom-10 z-20 bg-[#C5D92D] p-5 rounded-xl shadow-xl max-w-[180px]"
+            >
+              <p className="text-[#1a2e05] font-bold text-sm leading-tight">
+                Trusted and funded by more than 675 companies
+              </p>
+            </motion.div>
+            {/*<motion.img 
+              initial={{ x: -20, opacity: 0 }}
+              whileInView={{ x: 0, opacity: 1 }}
+              transition={{ delay: 0.2 }}
+              src="/services/start-dental-billing-service2.jpg" 
               className="absolute left-0 bottom-0 w-2/3 h-2/3 object-cover rounded-2xl shadow-xl z-10 border-4 border-white"
               alt="Team"
             />
@@ -92,7 +115,7 @@ const Services = () => {
               <p className="text-[#1a2e05] font-bold text-sm leading-tight">
                 Trusted and funded by more than 675 companies
               </p>
-            </motion.div>
+  </motion.div>*/}
           </motion.div>
         </div>
       </section>

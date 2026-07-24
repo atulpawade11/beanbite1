@@ -11,7 +11,8 @@ const Navbar = () => {
   const serviceLinks = [
     { path: "/services/credentialing", label: "Credentialing" },
     { path: "/services/verification", label: "Dental Insurance Verification" },
-    { path: "/services/billing", label: "Billing Services" }
+    { path: "/services/billing", label: "Billing Services" },
+    { path: "/services/consultingandaudit", label: "Practice Consulting and Audit Support" }
   ];
 
   // Helper to check if a link is active
